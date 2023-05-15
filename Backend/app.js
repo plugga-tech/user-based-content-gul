@@ -11,6 +11,8 @@ const MongoClient = require('mongodb').MongoClient;
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+console.log('hej');
+
 var app = express();
 
 app.use(cors());
