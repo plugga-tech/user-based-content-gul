@@ -2,9 +2,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const cors = requrie('cors');
+const cors = require('cors');
 const crypto = require('crypto-js');
-const MongoClient = requrie('mongodb').MongoClient;
+const MongoClient = require('mongodb').MongoClient;
 
 
 var indexRouter = require('./routes/index');
