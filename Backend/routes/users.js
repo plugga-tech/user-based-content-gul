@@ -15,6 +15,18 @@ router.post('/add', async function (req, res){
 
 
 //HÄMTA ALLA USERS
+router.get("/", (req, res) => {
+    
+    UserModel.find()
+  .then(users => {
+    console.log(users);
+    res.json(users)
+  })
+  .catch(error => {
+    console.error(error);
+    // Hantera fel
+  });
+})
 
 
 
