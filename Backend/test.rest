@@ -3,15 +3,19 @@ POST http://localhost:3000/api/users/add
 Content-Type: application/json
 
 {
-  "username": "Felix Anneblad",
-  "email": "anneblad89@mail.com",
-  "password": "Felix"
+  "username": "Sebasitan Håkansson",
+  "email": "Sebbe9@mail.com",
+  "password": "Sebastian"
 }
 
 ###
 
 // HÄMTA ALLA ANVÄNDARE
+GET http://localhost:3000/api/users/
 
+###
+
+//SKAPA NY POST
 POST http://localhost:3000/api/posts/add
 Content-Type: application/json
 
@@ -21,14 +25,11 @@ Content-Type: application/json
   "author": "Felix Anneblad"
 }
 
-###>>>>>>> main
-GET http://localhost:3000/api/users
-
 ###
 // LOGGA IN ANVÄNDARE
 POST http://localhost:3000/api/users/login 
 Content-Type: application/json
 
 {
-"email": "anneblad89@mail.com", "password": "Felix"
+"email": "Sebbe9@mail.com", "password": "Sebastian"
 }
