@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const postsRouter = require('./routes/posts')
 
 async function dbConnect() {
     await mongoose.connect(process.env.DB_URL)
@@ -32,5 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/posts', postsRouter);
 
 module.exports = app;
