@@ -5,7 +5,7 @@ var logger = require('morgan');
 const cors = require('cors');
 const crypto = require('crypto-js');
 require('dotenv').config();
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
 
 
 var indexRouter = require('./routes/index');
