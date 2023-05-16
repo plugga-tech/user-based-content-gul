@@ -12,7 +12,6 @@ router.post('/add', async (req, res) => {
     };
     const newPost = await postModel.create(post);
     res.status(200).json(newPost);
-    //res.send(newPost);
 });  
 
 module.exports = router;
