@@ -7,14 +7,28 @@ const crypto = require('crypto-js');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
+const userSchema = new mongoose.Schema({
+    username: {type: String, required: true },
+    email: {type: String, required: true },
+    password: {type: String, required: true },
+    access: {type: String, required: true}
+})
+
+const UserModel = mongoose.model('user', userSchema)
+
+module.exports = UserModel;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-mongoose.connect(process.env.DB_URL)
-.then(() =>{
-    console.log("Ansluten till databasen");
-})
+async function dbConnect() {
+    await mongoose.connect(process.env.DB_URL)
+    .then(() =>{
+        console.log("Ansluten till databasen");
+    })
+}
+
+dbConnect();
 
 console.log('hej');
 
