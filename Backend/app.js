@@ -11,6 +11,11 @@ const mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+mongoose.connect(process.env.DB_URL)
+.then(() =>{
+    console.log("Ansluten");
+})
+
 console.log('hej');
 
 var app = express();
