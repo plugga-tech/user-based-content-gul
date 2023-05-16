@@ -6,16 +6,6 @@ const cors = require('cors');
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
-    username: {type: String, required: true },
-    email: {type: String, required: true },
-    password: {type: String, required: true },
-    access: {type: String, required: true}
-})
-
-const UserModel = mongoose.model('user', userSchema)
-
-module.exports = UserModel;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -41,6 +31,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 
 module.exports = app;
