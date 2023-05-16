@@ -7,3 +7,9 @@ Content-Type: application/json
   "email": "anneblad89@mail.com",
   "password": "Felix"
 }
+
+###
+
+GET http://localhost:3000/api/users
+
+###
