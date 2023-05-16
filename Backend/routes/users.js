@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const mongoose = require('mongoose');
 const crypto = require('crypto-js');
-const UserModel = require('../models/userModel');
 
 //SKAPA NY USER
 router.post('/add', async function (req, res) {
