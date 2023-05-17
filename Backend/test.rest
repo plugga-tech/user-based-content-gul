@@ -20,9 +20,9 @@ POST http://localhost:3000/api/posts/add
 Content-Type: application/json
 
 {
-  "title": "TEST MED sentences",
-  "content": "Ett. Två. Tre. Fyra. Fem.",
-  "author": "Felix"
+  "title": "Mitt tredje inlägg",
+  "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. Vel fringilla est ullamcorper eget nulla. Et ultrices neque ornare aenean euismod elementum nisi quis. Quam nulla porttitor massa id neque aliquam. Cursus sit amet dictum sit amet justo donec enim. Nibh praesent tristique magna sit. Ac odio tempor orci dapibus ultrices. Risus commodo viverra maecenas accumsan. Arcu cursus vitae congue mauris rhoncus aenean. Morbi tincidunt augue interdum velit euismod in pellentesque. Aliquet nec ullamcorper sit amet risus nullam eget felis. Platea dictumst quisque sagittis purus. Malesuada fames ac turpis egestas integer eget aliquet. Sed cras ornare arcu dui vivamus.",
+  "author": "Therese Hagwall"
 }
 
 ###

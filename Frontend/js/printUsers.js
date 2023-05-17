@@ -13,6 +13,8 @@ export default async function printUsers(){
     console.log(users);
     let ourUsersText = document.createElement('h2');
     ourUsersText.innerHTML = 'VÅRA BLOGGARE';
+    let postsText = document.createElement('h2');
+    postsText.innerHTML = 'INLÄGG';
     users.map(user => {
         const card = document.createElement('div');
         card.id = 'user-cards';
@@ -23,6 +25,6 @@ export default async function printUsers(){
         nameTag.innerHTML = user.username;
         card.append(nameTag, img);
         container.append(card);
-        titleHeader.append(ourUsersText);
+        titleHeader.append(ourUsersText, postsText);
     })
 }
