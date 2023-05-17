@@ -1,9 +1,10 @@
 'use strict';
 
 const mainContainer = document.querySelector('#main-Container');
-const container = document.createElement('div');
-const titleHeader = document.createElement('div');
-container.append(titleHeader);
+const container = document.createElement('section');
+const titleHeader = document.createElement('header');
+
+mainContainer.append(titleHeader);
 container.id = 'content-div';
 mainContainer.append(container);
 
@@ -14,7 +15,10 @@ export default async function printUsers(){
     let ourUsersText = document.createElement('h2');
     ourUsersText.innerHTML = 'VÅRA BLOGGARE';
     let postsText = document.createElement('h2');
-    postsText.innerHTML = 'INLÄGG';
+    postsText.innerHTML = 'ALLA INLÄGG';
+    let separator = document.createElement('h2');
+    separator.innerText = '/';
+
     users.map(user => {
         const card = document.createElement('div');
         card.id = 'user-cards';
@@ -25,6 +29,7 @@ export default async function printUsers(){
         nameTag.innerHTML = user.username;
         card.append(nameTag, img);
         container.append(card);
-        titleHeader.append(ourUsersText, postsText);
+        mainContainer.append(container);
+        titleHeader.append(ourUsersText, separator, postsText);
     })
 }

@@ -2,10 +2,10 @@
 
 import loginForm from './loginForm.js';
 
-const mainContainer = document.getElementById('main-Container');
+
 const mainHeader = document.getElementById('main-Head');
-const createAccountBtn = document.createElement('button');
-const loginBox = document.createElement('div');
+const mainHeaderContainer = document.getElementById('main-Header-Container');
+
 
 export default async function headerBtn() {
     const headerLoginBtn = document.createElement('button');
@@ -13,7 +13,8 @@ export default async function headerBtn() {
     headerLoginBtn.id = 'login-Btn';
     headerLoginBtn.innerText = "Logga in";
     
-    mainHeader.appendChild(headerLoginBtn);
+    mainHeaderContainer.appendChild(headerLoginBtn);
+    /* mainHeader.appendChild(mainHeaderContainer); */
 
     headerLoginBtn.addEventListener('click', () => {
 

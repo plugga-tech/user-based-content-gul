@@ -20,6 +20,7 @@ export default async function loginForm () {
 
     loginEmailInput.placeholder = "Email Adress";
     loginPasswordInput.placeholder = "Lösenord";
+    loginPasswordInput.type = "password";
     loginBtn.innerText = "Logga in";
     createAccountFormBtn.innerText = "Skapa konto";
 
@@ -40,6 +41,7 @@ export default async function loginForm () {
         createAccountUsername.placeholder = "Användarnamn";
 
         createEmailInput.id = "email-Input";
+        createEmailInput.type = "email";
         createEmailInput.placeholder = "Email Adress";
 
         createPasswordInput.id = "password-Input";
@@ -52,20 +54,22 @@ export default async function loginForm () {
       
         mainContainer.appendChild(loginBox);
         
-        console.log("Hit?");
       
 
 
         createAccountBtn.addEventListener('click', () => {
-            if(!createAccountUsername.value || !createEmailInput.value || !createPasswordInput.value){
-                console.log(createAccountUsername.value);
+            
+            if (!createAccountUsername.value || !createEmailInput.value || !createPasswordInput.value) {
+
                 loginBox.innerHTML = "";
                 
                 const accountCreatedText = document.createElement('h1');
                 accountCreatedText.innerText = "Ditt konto har ej skapats!";
                 loginBox.appendChild(accountCreatedText);
                 loginForm();
-            }else{
+
+            } else {
+
                 createAccount(createAccountUsername.value, createEmailInput.value, createPasswordInput.value);
                 
                 loginBox.innerHTML = "";

@@ -1,8 +1,17 @@
+body {
+    margin: 0;
+}
 
-#main-Head{
+#main-Head {
     background-color: #FFC794;
+}
+
+#main-Head > #main-Header-Container {
+    max-width: 1400px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
 }
 
 #loginBtn{
@@ -15,17 +24,31 @@ h1{
     margin: 0;
 }
 
-#main-Container{
+#main-Container {
     background-color:#FFF7B0;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
     margin-top: 2rem;
+}
+
+#main-Container > header {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    background-color: orange;
 }
 
 #content-div{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 50px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    padding: 20px;
 }
 
 
