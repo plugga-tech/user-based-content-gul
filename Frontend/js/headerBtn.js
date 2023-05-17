@@ -1,11 +1,12 @@
 'use strict';
 
-const mainContainer = document.getElementById('main-Container');
+const mainContainer = document.getElementById('main-Head');
 
 export default async function headerBtn() {
     const loginBtn = document.createElement('button');
 
     loginBtn.innerText = "Logga in";
+    loginBtn.id = 'loginBtn';
 
     loginBtn.addEventListener('click', () => {
       loginBtn.style.display = 'none';

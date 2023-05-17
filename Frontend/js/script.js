@@ -1,4 +1,6 @@
 'use strict';
 
 import headerBtn from './headerBtn.js';
-headerBtn()
+import printUsers from './printUsers.js';
+headerBtn();
+printUsers();
