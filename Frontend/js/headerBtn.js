@@ -15,7 +15,6 @@ export default async function headerBtn() {
     
     mainHeader.appendChild(headerLoginBtn);
 
-    
     headerLoginBtn.addEventListener('click', () => {
 
       headerLoginBtn.style.display = 'none';

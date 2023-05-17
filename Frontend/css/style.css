@@ -1,0 +1,42 @@
+
+#main-Head{
+    background-color: #FFC794;
+    display: flex;
+    justify-content: space-between;
+}
+
+#loginBtn{
+    background-color: #5052f0;
+    color: aliceblue;
+    margin: 1rem;
+}
+
+h1{
+    margin: 0;
+}
+
+#main-Container{
+    background-color:#FFF7B0;
+    margin-top: 2rem;
+}
+
+#content-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    border: 2px solid black;
+}
+
+
+#user-img{
+    max-width: 150px;
+    border-radius: 10rem;
+    margin: 0.3rem;
+}
+
+#user-cards{
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 5px 5px 5px 1px rgb(107, 107, 107);
+}
