@@ -20,9 +20,9 @@ POST http://localhost:3000/api/posts/add
 Content-Type: application/json
 
 {
-  "title": "test54454543",
-  "content": "5454332434",
-  "author": "Felix Anneblad"
+  "title": "Blubb",
+  "content": "Blubb",
+  "author": "Felix Blubb"
 }
 
 ###

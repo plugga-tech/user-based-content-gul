@@ -5,10 +5,14 @@ const postModel = require('../models/postModel')
 // Endpoint to add a new post
 router.post('/add', async (req, res) => {
     // Create a new post
+    const timestamp = Date.now();
+    const formattedDate = new Date(timestamp).toLocaleString();
+
     const post = {
       title: req.body.title,
       content: req.body.content,
       author: req.body.author,
+      created: formattedDate
     };
     const newPost = await postModel.create(post);
     res.status(200).json(newPost);
