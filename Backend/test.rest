@@ -20,9 +20,9 @@ POST http://localhost:3000/api/posts/add
 Content-Type: application/json
 
 {
-  "title": "Blubb",
-  "content": "Blubb",
-  "author": "Felix Blubb"
+  "title": "TEST MED sentences",
+  "content": "Ett. Två. Tre. Fyra. Fem.",
+  "author": "Felix"
 }
 
 ###
