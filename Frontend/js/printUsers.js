@@ -4,11 +4,13 @@ const mainContainer = document.querySelector('#main-Container');
 const container = document.createElement('section');
 const titleHeader = document.createElement('header');
 
-mainContainer.append(titleHeader);
+// mainContainer.append(titleHeader);
 container.id = 'content-div';
 mainContainer.append(container);
 
-export default async function printUsers(){
+export default async function printUsers() {
+    container.innerHTML = "";
+    titleHeader.innerHTML = "";
     let response = await fetch('http://localhost:3000/api/users')
     let users = await response.json();
     console.log(users);
@@ -29,7 +31,9 @@ export default async function printUsers(){
         nameTag.innerHTML = user.username;
         card.append(nameTag, img);
         container.append(card);
-        mainContainer.append(container);
-        titleHeader.append(ourUsersText, separator, postsText);
     })
+    
+    titleHeader.append(ourUsersText, separator, postsText);
+    mainContainer.append(titleHeader);
+    mainContainer.append(container);
 }
