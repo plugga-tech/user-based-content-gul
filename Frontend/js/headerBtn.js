@@ -3,7 +3,6 @@
 const mainContainer = document.getElementById('main-Container');
 
 export default async function headerBtn() {
-    console.log("hej");
     const loginBtn = document.createElement('button');
 
     loginBtn.innerText = "Logga in";
