@@ -14,7 +14,7 @@ export default async function loginForm () {
     const loginEmailInput = document.createElement('input');
     const loginPasswordInput = document.createElement('input');
     const loginBtn = document.createElement('button');
-    loginBox.id = "Test";
+    loginBox.id = "login-Box";
 
     mainContainer.innerHTML = "";
 
@@ -57,16 +57,25 @@ export default async function loginForm () {
 
 
         createAccountBtn.addEventListener('click', () => {
-            
-            createAccount(createAccountUsername.value, createEmailInput.value, createPasswordInput.value);
-            
-            loginBox.innerHTML = "";
-            
-            const accountCreatedText = document.createElement('h1');
-            accountCreatedText.innerText = "Ditt konto har skapats!";
-            loginBox.appendChild(accountCreatedText);
-            
-            loginForm();
+            if(!createAccountUsername.value || !createEmailInput.value || !createPasswordInput.value){
+                console.log(createAccountUsername.value);
+                loginBox.innerHTML = "";
+                
+                const accountCreatedText = document.createElement('h1');
+                accountCreatedText.innerText = "Ditt konto har ej skapats!";
+                loginBox.appendChild(accountCreatedText);
+                loginForm();
+            }else{
+                createAccount(createAccountUsername.value, createEmailInput.value, createPasswordInput.value);
+                
+                loginBox.innerHTML = "";
+                
+                const accountCreatedText = document.createElement('h1');
+                accountCreatedText.innerText = "Ditt konto har skapats!";
+                loginBox.appendChild(accountCreatedText);
+                
+                loginForm();
+            }
             
             
         })
