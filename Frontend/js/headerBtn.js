@@ -1,21 +1,28 @@
 'use strict';
 
-const mainContainer = document.getElementById('main-Head');
+import loginForm from './loginForm.js';
+
+const mainContainer = document.getElementById('main-Container');
+const mainHeader = document.getElementById('main-Head');
+const createAccountBtn = document.createElement('button');
+const loginBox = document.createElement('div');
 
 export default async function headerBtn() {
-    const loginBtn = document.createElement('button');
+    const headerLoginBtn = document.createElement('button');
 
-    loginBtn.innerText = "Logga in";
-    loginBtn.id = 'loginBtn';
+    headerLoginBtn.id = 'login-Btn';
+    headerLoginBtn.innerText = "Logga in";
+    
+    mainHeader.appendChild(headerLoginBtn);
 
-    loginBtn.addEventListener('click', () => {
-      loginBtn.style.display = 'none';
+    headerLoginBtn.addEventListener('click', () => {
+
+      headerLoginBtn.style.display = 'none';
+      // const loginBox = document.createElement('div');
+      
+      loginForm();
 
       console.log("Du är inloggad");
     })
 
-    mainContainer.appendChild(loginBtn);
-
-
-  // När man har loggat in ska knappen försvinna och bytas mot andra saker som t.ex "Hej ditt namn"
 };
