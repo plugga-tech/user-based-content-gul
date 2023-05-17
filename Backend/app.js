@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const postsRouter = require('./routes/posts')
+const postsRouter = require('./routes/posts');
 
 async function dbConnect() {
     await mongoose.connect(process.env.DB_URL)
