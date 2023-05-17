@@ -1,6 +1,7 @@
 'use strict';
 
 import createAccount from './createAccount.js';
+import loggedInUser from './loggedInUser.js';
 
 const mainContainer = document.getElementById('main-Container');
 const createAccountFormBtn = document.createElement('button');
@@ -28,6 +29,11 @@ export default async function loginForm () {
 
     mainContainer.appendChild(loginBox);
 
+    loginBtn.addEventListener('click', () => {
+
+        mainContainer.innerHTML = "";
+        loggedInUser();
+    })
 
 
     createAccountFormBtn.addEventListener('click', () => {
