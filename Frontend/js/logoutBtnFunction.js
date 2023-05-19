@@ -13,7 +13,7 @@ export default async function logoutBtnFunction() {
 
     logoutBtn.addEventListener('click', () => {
         console.log("Logga ut Hit?");
-
+        localStorage.removeItem("user");
         logoutBtn.style.display = "none";
         headerBtn();
 
