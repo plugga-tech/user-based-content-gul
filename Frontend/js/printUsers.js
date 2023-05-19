@@ -13,7 +13,6 @@ export default async function printUsers() {
     titleHeader.innerHTML = "";
     let response = await fetch('http://localhost:3000/api/users')
     let users = await response.json();
-    console.log(users);
     let ourUsersText = document.createElement('h2');
     ourUsersText.innerHTML = 'VÅRA BLOGGARE';
     let postsText = document.createElement('h2');

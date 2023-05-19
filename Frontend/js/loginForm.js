@@ -13,7 +13,8 @@ const createPasswordInput = document.createElement('input');
 
 if (localStorage.getItem("user")) {
     console.log("Någon är inloggad");
-    logoutBtnFunction()
+    
+    logoutBtnFunction();
 } else {
     console.log("Ingen är inloggad");
 };
@@ -37,35 +38,27 @@ export default async function loginForm () {
 
     mainContainer.appendChild(loginBox);
 
-    loginBtn.addEventListener('click', () => {
+    loginBtn.addEventListener('click', async () => {
 
-        fetch("http://localhost:3000/user/login"), {
-
-        method: "post",
+        let response = await fetch('http://localhost:3000/api/users/login', {
+        method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({email: loginPasswordInput.value, password: loginPasswordInput.value})
+        body: JSON.stringify({ email: loginEmailInput.value, password: loginPasswordInput.value })
+    })
 
-        .then(res => res.mongoos())
-        .then(data => {
+    let data = await response.json();
+    console.log(data);
+    if (data[0]._id) {
             console.log("User inloggad", data);
-    
-            if (data.id) {
-                localStorage.setItem("user", data.id)
-                printLogoutButton();
-                printTodos();
-            } else {
-                console.log("message", data.message);
-            }
-        })
-
+            localStorage.setItem("user", data[0]._id)
+            loggedInUser();
+        } else {
+            console.log("message", data.message);
         }
-        
-
         mainContainer.innerHTML = "";
         loginBox.innerHTML = "";
-        loggedInUser();
     })
 
 

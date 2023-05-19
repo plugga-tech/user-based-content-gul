@@ -23,7 +23,7 @@ export default async function headerBtn() {
       
       loginForm();
 
-      console.log("Du är inloggad");
+      // console.log("Du är inloggad");
     })
 
 };

@@ -3,6 +3,8 @@
 import printPosts from './post/show-posts.js';
 import headerBtn from './headerBtn.js';
 import printUsers from './printUsers.js';
-headerBtn();
+if(!localStorage.getItem('user')){
+    headerBtn();
+}
 printUsers();
 printPosts();
