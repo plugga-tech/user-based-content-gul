@@ -2,6 +2,7 @@
 
 import createAccount from './createAccount.js';
 import loggedInUser from './loggedInUser.js';
+import logoutBtnFunction from './logoutBtnFunction.js';
 
 const mainContainer = document.getElementById('main-Container');
 const createAccountFormBtn = document.createElement('button');
@@ -9,6 +10,13 @@ const loginBox = document.createElement('div');
 const createAccountUsername = document.createElement('input');
 const createEmailInput = document.createElement('input');
 const createPasswordInput = document.createElement('input');
+
+if (localStorage.getItem("user")) {
+    console.log("Någon är inloggad");
+    logoutBtnFunction()
+} else {
+    console.log("Ingen är inloggad");
+};
 
 export default async function loginForm () {
 
@@ -31,7 +39,32 @@ export default async function loginForm () {
 
     loginBtn.addEventListener('click', () => {
 
+        fetch("http://localhost:3000/user/login"), {
+
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({email: loginPasswordInput.value, password: loginPasswordInput.value})
+
+        .then(res => res.mongoos())
+        .then(data => {
+            console.log("User inloggad", data);
+    
+            if (data.id) {
+                localStorage.setItem("user", data.id)
+                printLogoutButton();
+                printTodos();
+            } else {
+                console.log("message", data.message);
+            }
+        })
+
+        }
+        
+
         mainContainer.innerHTML = "";
+        loginBox.innerHTML = "";
         loggedInUser();
     })
 
@@ -90,6 +123,7 @@ export default async function loginForm () {
             
         })
       })
+
 }
 
 
