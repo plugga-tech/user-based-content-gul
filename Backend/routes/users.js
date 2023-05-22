@@ -31,6 +31,17 @@ router.get("/", (req, res) => {
 
 
 //HÄMTA SPECIFIK USER
+router.post("/", (req, res) => {
+    let findUser = { _id: req.body._id};
+    UserModel.find(findUser)
+        .then(user => {
+            res.json(user)
+        })
+        .catch(error => {
+            console.error(error);
+            // Hantera fel
+        });
+})
 
 
 
@@ -42,7 +53,6 @@ router.post('/login',(req, res) => {
         if (result.length === 0) {
             res.status(401).json({ message: "fel inlogg" });
         } else {
-            console.log(result);
             res.json(result);
         }
     })

@@ -51,8 +51,12 @@ export default async function loginForm () {
                 loginPasswordInput.value = "";
                 mainContainer.append(message);
             } else {
-                console.log("User inloggad", data);
                 localStorage.setItem("user", data[0]._id)
+                const mainHeaderContainer = document.getElementById('main-Header-Container');
+                const name = document.createElement('h3');
+                name.id = 'name';
+                name.innerHTML = data[0].username;
+                mainHeaderContainer.appendChild(name);
                 loggedInUser();
                 mainContainer.innerHTML = "";
                 loginBox.innerHTML = "";
