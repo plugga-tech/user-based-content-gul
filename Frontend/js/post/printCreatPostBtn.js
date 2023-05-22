@@ -4,11 +4,12 @@ import printPostForm from "./printPostForm.js"
 export default function printCreatPostBtn() {
     const mainContainer = document.getElementById('main-Container')
     const headerContainer = document.getElementById('main-Header-Container')
-    const knapp = document.createElement('button')
-    knapp.innerHTML ='Skapa inlägg';
-    headerContainer.append(knapp);
+    const createPostBtn = document.createElement('button')
+    createPostBtn.id = 'create-Post-Btn';
+    createPostBtn.innerHTML = 'Skapa inlägg';
+    headerContainer.append(createPostBtn);
 
-    knapp.addEventListener("click", ()=> {
+    createPostBtn.addEventListener("click", () => {
         mainContainer.innerHTML = '';
         printPostForm();
 

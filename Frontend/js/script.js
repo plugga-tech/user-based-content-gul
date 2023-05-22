@@ -7,7 +7,9 @@ import printCreatPostBtn from './post/printCreatPostBtn.js';
 if(!localStorage.getItem('user')){
 
     headerBtn();
+}else{
+    
+    printCreatPostBtn();
 }
 printUsers();
-printCreatPostBtn();
 // printPosts();
