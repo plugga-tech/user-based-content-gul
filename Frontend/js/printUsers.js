@@ -28,7 +28,7 @@ export default async function printUsers() {
         container.innerHTML = '';
         postsText.style.textDecoration = 'none';
         ourUsersText.style.textDecoration = 'underline';
-        printUsers();
+        printUsersCard();
     })
 
     postsText.addEventListener('click', () => {
@@ -37,7 +37,7 @@ export default async function printUsers() {
             postsText.style.textDecoration = 'underline';
             printPosts();
         })
-    function printUsers() {
+    function printUsersCard() {
 
         users.map(user => {
         const card = document.createElement('div');

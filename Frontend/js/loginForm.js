@@ -11,14 +11,6 @@ const createAccountUsername = document.createElement('input');
 const createEmailInput = document.createElement('input');
 const createPasswordInput = document.createElement('input');
 
-if (localStorage.getItem("user")) {
-    console.log("Någon är inloggad");
-    
-    logoutBtnFunction();
-} else {
-    console.log("Ingen är inloggad");
-};
-
 export default async function loginForm () {
 
     const loginEmailInput = document.createElement('input');
@@ -40,32 +32,39 @@ export default async function loginForm () {
 
     loginBtn.addEventListener('click', async () => {
 
-        let response = await fetch('http://localhost:3000/api/users/login', {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email: loginEmailInput.value, password: loginPasswordInput.value })
-    })
+        if(!loginEmailInput.value || !loginPasswordInput.value){
+            alert('Fyll i både email och lösenord');
+        }else{
 
-    let data = await response.json();
-    console.log(data);
-    if (data[0]._id) {
-            console.log("User inloggad", data);
-            localStorage.setItem("user", data[0]._id)
-            loggedInUser();
-        } else {
-            console.log("message", data.message);
-        }
-        mainContainer.innerHTML = "";
-        loginBox.innerHTML = "";
-    })
+            let response = await fetch('http://localhost:3000/api/users/login', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email: loginEmailInput.value, password: loginPasswordInput.value })
+            })
+            let data = await response.json();
+            if (!data[0] || !data[0]._id) {
+                const message = document.createElement('h3');
+                message.innerHTML = `${data.message}, försök igen!`
+                loginEmailInput.value = "";
+                loginPasswordInput.value = "";
+                mainContainer.append(message);
+            } else {
+                console.log("User inloggad", data);
+                localStorage.setItem("user", data[0]._id)
+                loggedInUser();
+                mainContainer.innerHTML = "";
+                loginBox.innerHTML = "";
+            };
+        };
+    });
 
 
     createAccountFormBtn.addEventListener('click', () => {
 
         loginBox.innerHTML = "";
-      
+        
         const createAccountText = document.createElement('h1');
         createAccountText.innerText = "Skapa konto!";
 
@@ -81,12 +80,12 @@ export default async function loginForm () {
         
         const createAccountBtn = document.createElement('button');
         createAccountBtn.innerText = "Skapa konto";
-      
+        
         loginBox.append(createAccountText, createAccountUsername, createEmailInput, createPasswordInput, createAccountBtn);
-      
+        
         mainContainer.appendChild(loginBox);
         
-      
+        
 
 
         createAccountBtn.addEventListener('click', () => {
@@ -115,7 +114,7 @@ export default async function loginForm () {
             
             
         })
-      })
+    })
 
 }
 

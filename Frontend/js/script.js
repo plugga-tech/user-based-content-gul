@@ -1,15 +1,11 @@
 'use strict';
 
-import printPosts from './post/show-posts.js';
 import headerBtn from './headerBtn.js';
 import printUsers from './printUsers.js';
-import printCreatPostBtn from './post/printCreatPostBtn.js';
+import loggedInUser from './loggedInUser.js';
 if(!localStorage.getItem('user')){
-
     headerBtn();
+    printUsers();
 }else{
-    
-    printCreatPostBtn();
+    loggedInUser();
 }
-printUsers();
-// printPosts();
