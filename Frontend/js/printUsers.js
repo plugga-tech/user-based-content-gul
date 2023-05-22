@@ -14,7 +14,6 @@ export default async function printUsers() {
     mainContainer.innerHTML = "";
     container.innerHTML = "";
     titleHeader.innerHTML = "";
-    printPosts();
     let response = await fetch('http://localhost:3000/api/users')
     let users = await response.json();
     let ourUsersText = document.createElement('h2');
@@ -23,6 +22,7 @@ export default async function printUsers() {
     postsText.innerHTML = 'ALLA INLÄGG';
     let separator = document.createElement('h2');
     separator.innerText = '/';
+    printPosts();
 
     ourUsersText.addEventListener('click', () => {
         container.innerHTML = '';
