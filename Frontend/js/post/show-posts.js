@@ -4,7 +4,6 @@ export default async function printPosts(){
   fetch('http://localhost:3000/api/posts')
     .then(response => response.json())
     .then(posts => {
-        console.log(posts);
       // Get the container element to display the posts
       const container = document.getElementById('content-div');
 
@@ -19,9 +18,7 @@ export default async function printPosts(){
         authorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
         titleEl.textContent = post.title;
         contentEl.textContent = firstTwoSentences;
-        postEl.appendChild(titleEl);
-        postEl.appendChild(contentEl);
-        postEl.appendChild(authorDateEl);
+        postEl.append(titleEl, contentEl, authorDateEl);
         container.appendChild(postEl);
 
         // Add click event listener to each title element
@@ -39,10 +36,7 @@ export default async function printPosts(){
           selectedTitleEl.textContent = post.title;
           selectedContentEl.textContent = post.content;
           selectedAuthorDateEl.textContent = `Author: ${post.username}, Date: ${post.created}`;
-          selectedPostContainer.appendChild(selectedTitleEl);
-          selectedPostContainer.appendChild(selectedContentEl);
-          selectedPostContainer.appendChild(selectedAuthorDateEl);
-          selectedPostContainer.appendChild(backButton);
+          selectedPostContainer.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
           document.body.appendChild(selectedPostContainer);
 
           // Style the back button
