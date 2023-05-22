@@ -6,7 +6,7 @@ export default async function createPost(title, content, author ) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ title: title, content: content, username: author })
+        body: JSON.stringify({ title: title, content: content, userId: author })
     })
 
     let data = await response.json();
