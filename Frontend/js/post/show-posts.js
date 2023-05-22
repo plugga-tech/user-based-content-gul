@@ -11,6 +11,7 @@ export default async function printPosts(){
       // Display all posts with title
       posts.forEach(post => {
         const postEl = document.createElement('div');
+        postEl.id = 'postEl';
         const titleEl = document.createElement('h2');
         const contentEl = document.createElement('p');
         const firstTwoSentences = post.content.split('.').slice(0, 2).join('.') + '.';
