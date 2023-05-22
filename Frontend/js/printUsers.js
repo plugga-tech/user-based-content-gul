@@ -1,5 +1,7 @@
 'use strict';
 
+import printPosts from './post/show-posts.js'
+
 const mainContainer = document.querySelector('#main-Container');
 const container = document.createElement('section');
 const titleHeader = document.createElement('header');
@@ -9,8 +11,10 @@ container.id = 'content-div';
 mainContainer.append(container);
 
 export default async function printUsers() {
+    mainContainer.innerHTML = "";
     container.innerHTML = "";
     titleHeader.innerHTML = "";
+    printPosts();
     let response = await fetch('http://localhost:3000/api/users')
     let users = await response.json();
     console.log(users);
@@ -21,7 +25,22 @@ export default async function printUsers() {
     let separator = document.createElement('h2');
     separator.innerText = '/';
 
-    users.map(user => {
+    ourUsersText.addEventListener('click', () => {
+        container.innerHTML = '';
+        postsText.style.textDecoration = 'none';
+        ourUsersText.style.textDecoration = 'underline';
+        printUsers();
+    })
+
+    postsText.addEventListener('click', () => {
+            container.innerHTML = '';
+            ourUsersText.style.textDecoration = 'none';
+            postsText.style.textDecoration = 'underline';
+            printPosts();
+        })
+    function printUsers() {
+
+        users.map(user => {
         const card = document.createElement('div');
         card.id = 'user-cards';
         const nameTag = document.createElement('h3');
@@ -31,8 +50,10 @@ export default async function printUsers() {
         nameTag.innerHTML = user.username;
         card.append(nameTag, img);
         container.append(card);
-    })
-    
+        })
+    }
+
+
     titleHeader.append(ourUsersText, separator, postsText);
     mainContainer.append(titleHeader);
     mainContainer.append(container);
