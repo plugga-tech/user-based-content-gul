@@ -7,4 +7,4 @@ if(!localStorage.getItem('user')){
     headerBtn();
 }
 printUsers();
-printPosts();
+// printPosts();

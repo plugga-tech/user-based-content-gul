@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const postModel = require('../models/postModel')
+const postModel = require('../models/postModel');
+const { default: mongoose } = require('mongoose');
 
 // Endpoint to add a new post
 router.post('/add', async (req, res) => {
@@ -11,7 +12,8 @@ router.post('/add', async (req, res) => {
     const post = {
       title: req.body.title,
       content: req.body.content,
-      author: req.body.author,
+      // username: req.body.username,
+      username: mongoose.SchemaType.ObjectId,
       created: formattedDate
     };
     const newPost = await postModel.create(post);
@@ -21,17 +23,16 @@ router.post('/add', async (req, res) => {
 
 //Hämta alla posts
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
 //HÄMTAR ALLA POSTS. går in i models => postModel och där skickar vi med funktionen find() för att ta ut alla posts från DB
-  postModel.find()
-      .then(posts => {
-        console.log(posts);
-        res.json(posts)
-      })
-      .catch(error => {
-        // Hantera fel
-        console.error(error);
-      });
-})
+try {
+  const posts = await postModel.find().populate('author');
+  console.log(posts);
+  res.json(posts);
+} catch (error) {
+  console.error('Error fetching posts:', error);
+  res.status(500).json({ error: 'Failed to fetch posts' });
+}
+});
 
 module.exports = router;
