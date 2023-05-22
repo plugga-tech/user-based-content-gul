@@ -12,10 +12,10 @@ router.post('/add', async (req, res) => {
     const post = {
       title: req.body.title,
       content: req.body.content,
-      // username: req.body.username,
-      username: mongoose.SchemaType.ObjectId,
+      author: req.body.userId,
       created: formattedDate
     };
+
     const newPost = await postModel.create(post);
     res.status(200).json(newPost);
 });

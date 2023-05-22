@@ -20,9 +20,9 @@ POST http://localhost:3000/api/posts/add
 Content-Type: application/json
 
 {
-  "title": "Fredag",
-  "content": "Fredda",
-  "username": "64636ed4029c2eb1613b2f5e"
+  "title": "Måndag",
+  "content": "Sol",
+  "userId": "64636ed4029c2eb1613b2f5e"
 }
 
 ###

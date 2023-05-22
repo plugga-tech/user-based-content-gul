@@ -8,6 +8,7 @@ export default async function printPosts(){
       // Get the container element to display the posts
       const container = document.getElementById('content-div');
 
+
       // Display all posts with title
       posts.forEach(post => {
         const postEl = document.createElement('div');
@@ -15,8 +16,7 @@ export default async function printPosts(){
         const contentEl = document.createElement('p');
         const firstTwoSentences = post.content.split('.').slice(0, 2).join('.') + '.';
         const authorDateEl = document.createElement('p');
-
-        authorDateEl.textContent = `Author: ${post.username}, Date: ${post.created}`;
+        authorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
         titleEl.textContent = post.title;
         contentEl.textContent = firstTwoSentences;
         postEl.appendChild(titleEl);
