@@ -1,5 +1,5 @@
 'use strict'
-import createPost from './post/creatPost.js';
+import printCreatPostBtn from './post/printCreatPostBtn.js'
 import printUsers from './printUsers.js';
 import logoutBtnFunction from './logoutBtnFunction.js';
 
@@ -10,7 +10,7 @@ export default async function loggedInUser() {
     console.log("Hit?");
 
     // mainContainer.innerHTML = "";
-    createPost();
+    printCreatPostBtn();
     printUsers();
     logoutBtnFunction();
     
