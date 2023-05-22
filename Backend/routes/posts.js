@@ -27,7 +27,6 @@ router.get("/", async (req, res) => {
 //HÄMTAR ALLA POSTS. går in i models => postModel och där skickar vi med funktionen find() för att ta ut alla posts från DB
 try {
   const posts = await postModel.find().populate('author');
-  console.log(posts);
   res.json(posts);
 } catch (error) {
   console.error('Error fetching posts:', error);

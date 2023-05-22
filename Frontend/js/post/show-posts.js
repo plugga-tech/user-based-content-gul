@@ -53,7 +53,7 @@ export default async function printPosts(){
           // Add click event listener to back button
           backButton.addEventListener('click', () => {
             // Show all posts and remove the selected post container
-            container.style.display = 'block';
+            container.style.display = 'flex';
             document.body.removeChild(selectedPostContainer);
           });
         });
