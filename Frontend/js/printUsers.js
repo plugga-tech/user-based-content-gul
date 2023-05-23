@@ -79,31 +79,33 @@ export default async function printUsers() {
                   // Add click event listener to each title element
                   titleEl.addEventListener('click', () => {
                     // Hide all posts
-                    container.style.display = 'none';
-          
-                    // Create a container for the selected post
-                    const selectedPostContainer = document.createElement('div');
+                    //container.style.display = 'none';
+                  
+                    // Clear the container
+                    container.innerHTML = '';
+                  
+                    // Create elements for the selected post
                     const selectedTitleEl = document.createElement('h2');
                     const selectedContentEl = document.createElement('p');
                     const selectedAuthorDateEl = document.createElement('p');
                     const backButton = document.createElement('button');
-          
+                  
                     selectedTitleEl.textContent = post.title;
                     selectedContentEl.textContent = post.content;
                     selectedAuthorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
-                    selectedPostContainer.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
-                    document.body.appendChild(selectedPostContainer);
-          
+                    container.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
+                  
                     // Style the back button
                     backButton.textContent = '< Back';
                     backButton.id = 'backBtn';
                     backButton.style.marginTop = '1rem';
-          
+                  
                     // Add click event listener to back button
                     backButton.addEventListener('click', () => {
-                      // Show all posts and remove the selected post container
-                      container.style.display = 'flex';
-                      document.body.removeChild(selectedPostContainer);
+                        // Clear the container
+                        container.innerHTML = '';
+                        // Show all posts
+                        displayUserPosts(userId);
                     });
                   });
                 });
