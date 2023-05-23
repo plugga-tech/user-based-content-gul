@@ -76,4 +76,8 @@ h1{
 
 button:hover {
     cursor: pointer;
-  }
+}
+
+#site-name:hover{
+    cursor: pointer;
+}
