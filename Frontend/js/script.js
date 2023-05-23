@@ -9,3 +9,8 @@ if(!localStorage.getItem('user')){
 }else{
     getUsername();
 }
+
+let siteName = document.getElementById('site-name');
+siteName.addEventListener('click', () => {
+    window.location.href = 'index.html';
+} )

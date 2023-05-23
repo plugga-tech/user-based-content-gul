@@ -5,6 +5,7 @@ import headerBtn from './headerBtn.js';
 export default async function logoutBtnFunction() {
     const mainHeaderContainer = document.getElementById('main-Header-Container');
     const createPostBtn = document.getElementById('create-Post-Btn');
+    const getMyPostsBtn = document.getElementById('my-posts-btn');
     const name = document.getElementById('name');
     const logoutBtn = document.createElement('button');
     logoutBtn.id = "logoutBtn";
@@ -18,6 +19,7 @@ export default async function logoutBtnFunction() {
         localStorage.removeItem("user");
         logoutBtn.style.display = "none";
         createPostBtn.style.display = 'none';
+        getMyPostsBtn.style.display = 'none';
         headerBtn();
     });
 };
