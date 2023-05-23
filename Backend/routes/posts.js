@@ -34,4 +34,46 @@ try {
 }
 });
 
+//Hämta specifik post
+router.post("/", (req, res) => {
+  let findPost = { _id: req.body._id};
+  postModel.find(findPost)
+      .then(post => {
+          res.json(post)
+      })
+      .catch(error => {
+          console.error(error);
+          // Hantera fel
+      });
+})
+
+
+//Delete post
+router.delete('/delete', async (req, res) => {
+  try {
+    const deletedPost = await postModel.findOneAndDelete({ _id: req.body._id });
+    res.json(deletedPost);
+  } catch (err) {
+    res.status(500).json({ message: 'Error deleting post' });
+  }
+});
+
+//Uppdatera post
+router.put('/:id', async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const updatedPost = req.body;
+
+    const result = await postModel.findByIdAndUpdate(postId, updatedPost, {new: true});
+
+    if(result){
+      res.json(result);
+    }else{
+      res.status(404).json({message: 'Inlägget hittades inte.'})
+    }
+  } catch (err) {
+    res.status(500).json({ message: 'Ett fel uppstod vid uppdatering av inlägget!' });
+  }
+});
+
 module.exports = router;

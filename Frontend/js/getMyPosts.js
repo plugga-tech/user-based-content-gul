@@ -1,5 +1,8 @@
 'use strict';
 
+import deletePost from './deletePost.js';
+import editPost from './editPost.js';
+
 export default function getMyPosts() {
     const mainContainer = document.getElementById('main-Container');
     mainContainer.innerHTML = '';
@@ -25,8 +28,20 @@ export default function getMyPosts() {
                     authorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
                     titleEl.textContent = post.title;
                     contentEl.textContent = firstTwoSentences;
+                    const deleteBtn = document.createElement('button');
+                    const editBtn = document.createElement('button');
+                    deleteBtn.innerText = 'Ta bort';
+                    editBtn.innerText = 'Redigera';
                     postEl.append(titleEl, contentEl, authorDateEl);
-                    container.append(postEl);
+                    container.append(postEl, deleteBtn, editBtn);
+
+                    deleteBtn.addEventListener('click', () => {
+                        deletePost(post._id);
+                    });
+
+                    editBtn.addEventListener('click', () => {
+                        editPost(post._id);
+                    });
                 };
             });
         });

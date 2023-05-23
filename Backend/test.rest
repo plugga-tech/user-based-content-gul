@@ -48,3 +48,34 @@ Content-Type: application/json
 {
 "_id": "64636ed4029c2eb1613b2f5e"
 }
+
+###
+
+// HÄMTA SPECIFIK POST
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+"_id": "646bdfc5d81ee0acc9be8e15"
+}
+
+###
+
+//DELETE POST
+DELETE http://localhost:3000/api/posts/delete
+Content-Type: application/json
+
+{
+  "_id": "646c6991bcef05a02df31d45"
+}
+
+###
+//UPPDATERA POST
+PUT http://localhost:3000/api/posts/646bdfc5d81ee0acc9be8e15
+Content-Type: application/json
+
+{
+  "title": "Blir det ändring igeeeen?",
+  "content": "FUUUUUUNGERA!!!!"
+  
+}
