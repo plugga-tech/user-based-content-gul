@@ -73,16 +73,16 @@ export default async function printUsers() {
               });
             });
           }
-          
+
           function displayUserPosts(userId) {
             fetch('http://localhost:3000/api/posts')
               .then(response => response.json())
               .then(posts => {
                 container.innerHTML = ''; // Clear the container
-          
+
                 // Filter posts by matching author ID
                 const userPosts = posts.filter(post => post.author._id === userId);
-          
+
                 // Display filtered posts with title
                 userPosts.forEach(post => {
                   // Create post elements
@@ -98,6 +98,7 @@ export default async function printUsers() {
                   postEl.append(titleEl, contentEl, authorDateEl);
                   container.appendChild(postEl);
 
+
                   postEl.addEventListener('mouseover', () => {
                     postEl.style.cursor = 'pointer';
                   });
@@ -105,30 +106,31 @@ export default async function printUsers() {
                   postEl.addEventListener('mouseout', () => {
                     postEl.style.cursor = 'default';
                   });
+
                   // Add click event listener to each title element
                   postEl.addEventListener('click', () => {
                     // Hide all posts
                     //container.style.display = 'none';
-                  
+
                     // Clear the container
                     container.innerHTML = '';
-                  
+
                     // Create elements for the selected post
                     const selectedTitleEl = document.createElement('h2');
                     const selectedContentEl = document.createElement('p');
                     const selectedAuthorDateEl = document.createElement('p');
                     const backButton = document.createElement('button');
-                  
+
                     selectedTitleEl.textContent = post.title;
                     selectedContentEl.textContent = post.content;
                     selectedAuthorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
                     container.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
-                  
+
                     // Style the back button
                     backButton.textContent = '< Back';
                     backButton.id = 'backBtn';
                     backButton.style.marginTop = '1rem';
-                  
+
                     // Add click event listener to back button
                     backButton.addEventListener('click', () => {
                         // Clear the container
@@ -149,7 +151,7 @@ export default async function printUsers() {
                 console.error('Error:', error);
               });
           }
-          
+
           container.addEventListener('click', event => {
             const userCard = event.target.closest('#user-cards');
             if (userCard) {
