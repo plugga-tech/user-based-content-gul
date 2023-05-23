@@ -25,10 +25,9 @@ export default async function printPosts(){
         // Add click event listener to each title element
         titleEl.addEventListener('click', () => {
           // Hide all posts
-          container.style.display = 'none';
+          container.innerHTML = '';
 
           // Create a container for the selected post
-          const selectedPostContainer = document.createElement('div');
           const selectedTitleEl = document.createElement('h2');
           const selectedContentEl = document.createElement('p');
           const selectedAuthorDateEl = document.createElement('p');
@@ -37,8 +36,7 @@ export default async function printPosts(){
           selectedTitleEl.textContent = post.title;
           selectedContentEl.textContent = post.content;
           selectedAuthorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
-          selectedPostContainer.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
-          document.body.appendChild(selectedPostContainer);
+          container.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
 
           // Style the back button
           backButton.textContent = '< Back';
@@ -47,9 +45,8 @@ export default async function printPosts(){
 
           // Add click event listener to back button
           backButton.addEventListener('click', () => {
-            // Show all posts and remove the selected post container
-            container.style.display = 'flex';
-            document.body.removeChild(selectedPostContainer);
+            container.innerHTML = '';
+            printPosts();
           });
         });
       });

@@ -2,7 +2,7 @@
 
 import createAccount from './createAccount.js';
 import loggedInUser from './loggedInUser.js';
-import logoutBtnFunction from './logoutBtnFunction.js';
+import doesUserExist from './doesUserExist.js';
 
 const mainContainer = document.getElementById('main-Container');
 const createAccountFormBtn = document.createElement('button');
@@ -68,7 +68,7 @@ export default async function loginForm () {
     createAccountFormBtn.addEventListener('click', () => {
 
         loginBox.innerHTML = "";
-        
+
         const createAccountText = document.createElement('h1');
         createAccountText.innerText = "Skapa konto!";
 
@@ -81,23 +81,24 @@ export default async function loginForm () {
 
         createPasswordInput.id = "password-Input";
         createPasswordInput.placeholder = "Lösenord";
-        
+        createPasswordInput.type = "password";
+
         const createAccountBtn = document.createElement('button');
         createAccountBtn.innerText = "Skapa konto";
-        
+
         loginBox.append(createAccountText, createAccountUsername, createEmailInput, createPasswordInput, createAccountBtn);
-        
+
         mainContainer.appendChild(loginBox);
-        
-        
 
 
-        createAccountBtn.addEventListener('click', () => {
-            
+
+
+        createAccountBtn.addEventListener('click', async() => {
+
             if (!createAccountUsername.value || !createEmailInput.value || !createPasswordInput.value) {
 
                 loginBox.innerHTML = "";
-                
+
                 const accountCreatedText = document.createElement('h1');
                 accountCreatedText.innerText = "Ditt konto har ej skapats!";
                 loginBox.appendChild(accountCreatedText);
@@ -105,18 +106,27 @@ export default async function loginForm () {
 
             } else {
 
-                createAccount(createAccountUsername.value, createEmailInput.value, createPasswordInput.value);
-                
+                const userExist = await doesUserExist()
+                if (userExist === true) {
+                    const message = document.createElement('h2');
+                    message.innerText = "Användarnamnet och/eller emailen finns redan!";
+
+                    loginBox.appendChild(message);
+
+                }else{
+                    createAccount(createAccountUsername.value, createEmailInput.value, createPasswordInput.value);
                 loginBox.innerHTML = "";
-                
+
                 const accountCreatedText = document.createElement('h1');
                 accountCreatedText.innerText = "Ditt konto har skapats!";
                 loginBox.appendChild(accountCreatedText);
-                
+
                 loginForm();
+                }
+
             }
-            
-            
+
+
         })
     })
 
