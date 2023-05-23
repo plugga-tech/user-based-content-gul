@@ -56,7 +56,7 @@ router.post('/login',(req, res) => {
     UserModel.find(findUser)
     .then(result => {
         if (result.length === 0) {
-            res.status(401).json({ message: "fel inlogg" });
+            res.status(401).json({ message: "Fel inlogg" });
         } else {
             res.json(result);
         }

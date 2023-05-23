@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins&family=Walter+Turncoat&display=swap');
+
+
 body {
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 #main-Head {
@@ -12,6 +16,10 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+
+#site-name {
+    font-family: 'Walter Turncoat', cursive;
 }
 
 #loginBtn{
@@ -76,4 +84,96 @@ h1{
 
 button:hover {
     cursor: pointer;
-  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#loginBox-Wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+}
+
+#login-Box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    min-height: 400px;
+    gap: 20px;
+    border: solid black;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#login-Text, #create-Account-Text {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#login-Email-Input, #login-Password-Input, #username-Input, #email-Input, #password-Input {
+    width: 250px;
+    height: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+
+#login-Btn, #create-Account-Form-Btn, #create-Account-Btn {
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+
+}
+
+#account-Not-Created, #message {
+    font-size: 22px;
+    color: rgb(131, 0, 0);
+}

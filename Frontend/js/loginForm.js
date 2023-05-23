@@ -16,19 +16,36 @@ export default async function loginForm () {
     const loginEmailInput = document.createElement('input');
     const loginPasswordInput = document.createElement('input');
     const loginBtn = document.createElement('button');
+    const loginBoxDiv = document.createElement('div');
+    const loginText = document.createElement('h1');
+
+    loginBoxDiv.id = "loginBox-Wrapper";
+
     loginBox.id = "login-Box";
+
+    loginText.id = "login-Text";
 
     mainContainer.innerHTML = "";
 
     loginEmailInput.placeholder = "Email Adress";
+    loginEmailInput.id = "login-Email-Input";
+
     loginPasswordInput.placeholder = "Lösenord";
+    loginPasswordInput.id = "login-Password-Input";
     loginPasswordInput.type = "password";
+
     loginBtn.innerText = "Logga in";
+    loginBtn.id = "login-Btn";
+
     createAccountFormBtn.innerText = "Skapa konto";
+    createAccountFormBtn.id = "create-Account-Form-Btn";
 
-    loginBox.append(createAccountFormBtn, loginBtn, loginEmailInput, loginPasswordInput);
+    loginText.innerText = "Logga in";
 
-    mainContainer.appendChild(loginBox);
+    loginBox.append(loginText, loginEmailInput, loginPasswordInput, loginBtn, createAccountFormBtn);
+    loginBoxDiv.appendChild(loginBox)
+
+    mainContainer.appendChild(loginBoxDiv);
 
     loginBtn.addEventListener('click', async () => {
 
@@ -46,10 +63,11 @@ export default async function loginForm () {
             let data = await response.json();
             if (!data[0] || !data[0]._id) {
                 const message = document.createElement('h3');
+                message.id = "message";
                 message.innerHTML = `${data.message}, försök igen!`
                 loginEmailInput.value = "";
                 loginPasswordInput.value = "";
-                mainContainer.append(message);
+                loginBox.append(message);
             } else {
                 localStorage.setItem("user", data[0]._id)
                 const mainHeaderContainer = document.getElementById('main-Header-Container');
@@ -67,10 +85,12 @@ export default async function loginForm () {
 
     createAccountFormBtn.addEventListener('click', () => {
 
+        mainContainer.innerHTML = "";
         loginBox.innerHTML = "";
 
         const createAccountText = document.createElement('h1');
         createAccountText.innerText = "Skapa konto!";
+        createAccountText.id = "create-Account-Text";
 
         createAccountUsername.id = "username-Input";
         createAccountUsername.placeholder = "Användarnamn";
@@ -84,11 +104,13 @@ export default async function loginForm () {
         createPasswordInput.type = "password";
 
         const createAccountBtn = document.createElement('button');
+        createAccountBtn.id = "create-Account-Btn";
         createAccountBtn.innerText = "Skapa konto";
 
         loginBox.append(createAccountText, createAccountUsername, createEmailInput, createPasswordInput, createAccountBtn);
+        loginBoxDiv.appendChild(loginBox);
 
-        mainContainer.appendChild(loginBox);
+        mainContainer.appendChild(loginBoxDiv);
 
 
 
@@ -101,8 +123,9 @@ export default async function loginForm () {
 
                 const accountCreatedText = document.createElement('h1');
                 accountCreatedText.innerText = "Ditt konto har ej skapats!";
-                loginBox.appendChild(accountCreatedText);
+                accountCreatedText.id = "account-Not-Created";
                 loginForm();
+                loginBox.appendChild(accountCreatedText);
 
             } else {
 
