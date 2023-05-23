@@ -1,9 +1,7 @@
 'use strict';
 
-
 import deletePost from './deletePost.js';
 import editPost from './editPost.js';
-
 
 export default function getMyPosts() {
     const mainContainer = document.getElementById('main-Container');
@@ -19,10 +17,13 @@ export default function getMyPosts() {
     fetch('http://localhost:3000/api/posts')
         .then(response => response.json())
         .then(posts => {
+            const noPostsEl = document.createElement('p');
+            noPostsEl.textContent = 'Du har inga inlägg än';
+            container.appendChild(noPostsEl);
+            mainContainer.append(container);
             posts.forEach(post => {
-                console.log(post);
-
-                    if(post.author._id == localStorage.getItem('user')){
+                if(post.author._id === localStorage.getItem('user')){
+                    container.innerHTML = '';
                     const postEl = document.createElement('div');
                     postEl.id = 'postEl';
                     const titleEl = document.createElement('h2');
@@ -37,10 +38,6 @@ export default function getMyPosts() {
                     deleteBtn.innerText = 'Ta bort';
                     editBtn.innerText = 'Redigera';
                     postEl.append(titleEl, contentEl, authorDateEl);
-
-                    container.append(postEl)
-                    }
-
                     container.append(postEl, deleteBtn, editBtn);
 
                     deleteBtn.addEventListener('click', () => {
@@ -51,11 +48,7 @@ export default function getMyPosts() {
                         editPost(post._id);
                     });
                 };
-
             });
-            const noPostsEl = document.createElement('p');
-                        noPostsEl.textContent = 'Du har inga inlägg än';
-                        container.appendChild(noPostsEl);
-                        mainContainer.append(container);
         });
+        
 };
