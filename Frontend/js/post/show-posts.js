@@ -23,7 +23,7 @@ export default async function printPosts(){
         container.appendChild(postEl);
 
         // Add click event listener to each title element
-        titleEl.addEventListener('click', () => {
+        postEl.addEventListener('click', () => {
           // Hide all posts
           container.innerHTML = '';
 
