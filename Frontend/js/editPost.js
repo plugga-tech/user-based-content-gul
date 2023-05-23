@@ -10,11 +10,9 @@ export default async function editPost(postId) {
     const editTitleInput = document.createElement('input');
     editTitleInput.type = 'text';
     editTitleInput.id = 'editTitleInput';
-    editTitleInput.placeholder = 'Titel';
     editTitleInput.required = true;
     const editContentInput = document.createElement('textarea');
     editContentInput.id = 'editContentInput';
-    editContentInput.placeholder = 'Innehåll';
     const saveButton = document.createElement('button');
     saveButton.type = 'submit';
     saveButton.textContent = 'Spara';
