@@ -32,9 +32,9 @@ Du behöver skapa en egen databas, antingen en lokaldatabas eller via t.ex. Mong
 
 ### Följ oss!
 
--   Therese Hagwall [Github Profil](https://github.com/ThereseHagwall)
--   Jesper Flood [Github Profil](https://github.com/Bambyyyy)
--   Tony Hagwall [Github Profil](https://github.com/Hagwall86)
--   Matias Bengtson [Github Profil](https://github.com/Mrmbengan)
--   Felix Anneblad [Github Profil](https://github.com/AnnebladFelix)
--   Sebastian Håkansson [Github Profil](https://github.com/sebbehakansson)
+-   Therese Hagwalls [Github Profil](https://github.com/ThereseHagwall)
+-   Jesper Floods [Github Profil](https://github.com/Bambyyyy)
+-   Tony Hagwalls [Github Profil](https://github.com/Hagwall86)
+-   Matias Bengtsons [Github Profil](https://github.com/Mrmbengan)
+-   Felix Anneblads [Github Profil](https://github.com/AnnebladFelix)
+-   Sebastian Håkanssons [Github Profil](https://github.com/sebbehakansson)
