@@ -107,6 +107,12 @@ export default async function printUsers() {
                     });
                   });
                 });
+                if (userPosts.length === 0) {
+                  const noPostsEl = document.createElement('p');
+                  noPostsEl.textContent = 'No posts found for this user.';
+                  container.appendChild(noPostsEl);
+                  mainContainer.append(container);
+                }
               })
               .catch(error => {
                 console.error('Error:', error);
