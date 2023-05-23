@@ -73,3 +73,7 @@ h1{
     text-align: center;
     box-shadow: 5px 5px 5px 1px rgb(144, 143, 143);
 }
+
+button:hover {
+    cursor: pointer;
+  }

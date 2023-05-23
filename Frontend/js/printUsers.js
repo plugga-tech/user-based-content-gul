@@ -23,20 +23,35 @@ export default async function printUsers() {
     let separator = document.createElement('h2');
     separator.innerText = '/';
     printPosts();
+    
+    
+
 
     ourUsersText.addEventListener('click', () => {
         container.innerHTML = '';
         postsText.style.textDecoration = 'none';
         ourUsersText.style.textDecoration = 'underline';
         printUsersCard();
+    })    
+    ourUsersText.addEventListener('mouseover', () =>{
+        ourUsersText.style.cursor = 'pointer';
     })
+    ourUsersText.addEventListener('mouseout', () => {
+        ourUsersText.style.cursor = 'default';
+    });
 
     postsText.addEventListener('click', () => {
             container.innerHTML = '';
             ourUsersText.style.textDecoration = 'none';
             postsText.style.textDecoration = 'underline';
             printPosts();
-        })
+    })
+    postsText.addEventListener('mouseover', () =>{
+        postsText.style.cursor = 'pointer';
+    })
+    postsText.addEventListener('mouseout', () => {
+        postsText.style.cursor = 'default';
+    });
         function printUsersCard() {
             users.map(user => {
               const card = document.createElement('div');
@@ -49,6 +64,13 @@ export default async function printUsers() {
               nameTag.innerHTML = user.username;
               card.append(nameTag, img);
               container.append(card);
+              card.addEventListener('mouseover', () => {
+                card.style.cursor = 'pointer';
+              });
+              
+              card.addEventListener('mouseout', () => {
+                card.style.cursor = 'default';
+              });
             });
           }
 
@@ -75,6 +97,15 @@ export default async function printUsers() {
                   contentEl.textContent = firstTwoSentences;
                   postEl.append(titleEl, contentEl, authorDateEl);
                   container.appendChild(postEl);
+
+
+                  postEl.addEventListener('mouseover', () => {
+                    postEl.style.cursor = 'pointer';
+                  });
+                  
+                  postEl.addEventListener('mouseout', () => {
+                    postEl.style.cursor = 'default';
+                  });
 
                   // Add click event listener to each title element
                   postEl.addEventListener('click', () => {

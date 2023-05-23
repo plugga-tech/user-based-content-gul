@@ -22,6 +22,13 @@ export default async function printPosts(){
         postEl.append(titleEl, contentEl, authorDateEl);
         container.appendChild(postEl);
 
+        postEl.addEventListener('mouseover', () => {
+          postEl.style.cursor = 'pointer';
+        });
+        
+        postEl.addEventListener('mouseout', () => {
+          postEl.style.cursor = 'default';
+        });
         // Add click event listener to each title element
         postEl.addEventListener('click', () => {
           // Hide all posts
