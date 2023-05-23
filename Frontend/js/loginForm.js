@@ -81,6 +81,7 @@ export default async function loginForm () {
 
         createPasswordInput.id = "password-Input";
         createPasswordInput.placeholder = "Lösenord";
+        createPasswordInput.type = "password";
 
         const createAccountBtn = document.createElement('button');
         createAccountBtn.innerText = "Skapa konto";
@@ -105,11 +106,12 @@ export default async function loginForm () {
 
             } else {
 
-                const test = await doesUserExist()
-                console.log("svar från funktionen", test);
-                if (test === true) {
+                const userExist = await doesUserExist()
+                if (userExist === true) {
+                    const message = document.createElement('h2');
+                    message.innerText = "Användarnamnet och/eller emailen finns redan!";
 
-                    console.log("konto finns redan");
+                    loginBox.appendChild(message);
 
                 }else{
                     createAccount(createAccountUsername.value, createEmailInput.value, createPasswordInput.value);

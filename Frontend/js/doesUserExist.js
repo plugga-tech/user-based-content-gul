@@ -13,8 +13,7 @@ export default async function doesUserExist() {
 
     const foundUser = users.find(user => user.username == usernameInput)
     const foundEmail = users.find(user => user.email == emailInput)
-    console.log(foundUser, foundEmail);
-    if (foundUser === undefined || foundEmail === undefined) {
+    if (foundUser === undefined && foundEmail === undefined) {
         return false;
     } else {
         return true;
