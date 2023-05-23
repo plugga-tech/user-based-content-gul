@@ -175,6 +175,7 @@ button:hover {
 #account-Not-Created, #message {
     font-size: 22px;
     color: rgb(131, 0, 0);
+}
 
 #site-name:hover {
     cursor: pointer;
