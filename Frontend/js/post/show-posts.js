@@ -6,8 +6,8 @@ export default async function printPosts(){
     .then(posts => {
       // Get the container element to display the posts
       const container = document.getElementById('content-div');
-
-
+      // Gets the latest post at the top
+      posts.reverse();
       // Display all posts with title
       posts.forEach(post => {
         const postEl = document.createElement('div');
@@ -36,7 +36,7 @@ export default async function printPosts(){
 
           selectedTitleEl.textContent = post.title;
           selectedContentEl.textContent = post.content;
-          selectedAuthorDateEl.textContent = `Author: ${post.username}, Date: ${post.created}`;
+          selectedAuthorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
           selectedPostContainer.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
           document.body.appendChild(selectedPostContainer);
 
