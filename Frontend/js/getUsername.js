@@ -13,7 +13,7 @@ export default async function getUsername() {
     const mainHeaderContainer = document.getElementById('main-Header-Container');
     const name = document.createElement('h3');
     name.id = 'name';
-    name.innerHTML = data[0].username;
+    name.innerHTML = `Inloggad som ${data[0].username}`;
     mainHeaderContainer.appendChild(name);
     loggedInUser();
 }
