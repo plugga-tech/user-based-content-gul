@@ -5,13 +5,18 @@ const UserModel = require('../models/userModel');
 
 //SKAPA NY USER
 router.post('/add', async function (req, res) {
-    let userToSave = { email: req.body.email, username: req.body.username }
+    const timestamp = Date.now();
+    const formattedDate = new Date(timestamp).toLocaleString();
     let hashedPassword = crypto.SHA3(req.body.password).toString();
-    userToSave.password = hashedPassword;
 
+    let userToSave = { 
+        email: req.body.email, 
+        username: req.body.username,
+        created: formattedDate
+    }
+    userToSave.password = hashedPassword;
     const newUser = await UserModel.create(userToSave);
     res.status(201).json(newUser);
-
 })
 
 
