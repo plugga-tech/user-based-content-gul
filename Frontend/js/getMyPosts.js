@@ -1,5 +1,6 @@
 'use strict';
 
+
 export default function getMyPosts() {
     const mainContainer = document.getElementById('main-Container');
     mainContainer.innerHTML = '';
@@ -15,7 +16,9 @@ export default function getMyPosts() {
         .then(response => response.json())
         .then(posts => {
             posts.forEach(post => {
-                if(post.author._id === localStorage.getItem('user')){
+                console.log(post);
+
+                    if(post.author._id == localStorage.getItem('user')){
                     const postEl = document.createElement('div');
                     postEl.id = 'postEl';
                     const titleEl = document.createElement('h2');
@@ -26,10 +29,12 @@ export default function getMyPosts() {
                     titleEl.textContent = post.title;
                     contentEl.textContent = firstTwoSentences;
                     postEl.append(titleEl, contentEl, authorDateEl);
-                    container.append(postEl);
-                };
+                    container.append(postEl)
+                    }
             });
+            const noPostsEl = document.createElement('p');
+                        noPostsEl.textContent = 'Du har inga inlägg än';
+                        container.appendChild(noPostsEl);
+                        mainContainer.append(container);
         });
 };
-
-
