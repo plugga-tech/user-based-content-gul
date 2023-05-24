@@ -100,6 +100,24 @@ button:hover {
     cursor: pointer;
 }
 
+#site-name:hover {
+    cursor: pointer;
+}
+
+#single-post{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+#backBtn{
+    max-width: 100px;
+}
+#selected-title{
+    display: flex;
+    justify-content: center;
+}
+
 #header-Logout-Btn, #create-Post-Btn, #my-Posts-Btn {
     width: 100px;
     height: 26px;
@@ -118,42 +136,6 @@ button:hover {
     text-align: end;
     margin-top: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #loginBox-Wrapper {
     display: flex;

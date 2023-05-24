@@ -35,15 +35,22 @@ export default async function printPosts(){
           container.innerHTML = '';
 
           // Create a container for the selected post
+          const singlePost = document.createElement('div');
+          singlePost.id = 'single-post';
           const selectedTitleEl = document.createElement('h2');
+          selectedTitleEl.id = 'selected-title';
           const selectedContentEl = document.createElement('p');
+          selectedContentEl.id = 'selected-content';
           const selectedAuthorDateEl = document.createElement('p');
+          selectedAuthorDateEl.id = 'selected-author'
           const backButton = document.createElement('button');
+          backButton.id = 'selected-btn'
 
           selectedTitleEl.textContent = post.title;
           selectedContentEl.textContent = post.content;
           selectedAuthorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
-          container.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton);
+          singlePost.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton)
+          container.append(singlePost);
 
           // Style the back button
           backButton.textContent = '< Back';
