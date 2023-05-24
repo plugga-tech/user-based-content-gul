@@ -1,6 +1,7 @@
 'use strict'
 
 import headerBtn from './headerBtn.js';
+import printUsers from './printUsers.js';
 
 export default async function logoutBtnFunction() {
     const mainHeaderContainer = document.getElementById('main-Header-Container');
@@ -23,5 +24,6 @@ export default async function logoutBtnFunction() {
         createPostBtn.style.display = 'none';
         getMyPostsBtn.style.display = 'none';
         headerBtn();
+        printUsers();
     });
 };

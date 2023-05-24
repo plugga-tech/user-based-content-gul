@@ -5,6 +5,7 @@ const mainHeaderContainer = document.getElementById('main-Header-Container');
 const siteBtns = document.getElementById('site-Btns');
 
 export default async function headerBtn() {
+    siteBtns.innerHTML = "";
     const headerLoginBtn = document.createElement('button');
 
     headerLoginBtn.id = 'login-Btn';
