@@ -86,10 +86,23 @@ button:hover {
     cursor: pointer;
 }
 
+#site-name:hover {
+    cursor: pointer;
+}
 
+#single-post{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
 
-
-
+#backBtn{
+    max-width: 100px;
+}
+#selected-title{
+    display: flex;
+    justify-content: center;
+}
 
 
 
@@ -177,6 +190,3 @@ button:hover {
     color: rgb(131, 0, 0);
 }
 
-#site-name:hover {
-    cursor: pointer;
-}
