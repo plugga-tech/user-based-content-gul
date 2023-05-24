@@ -11,9 +11,11 @@ export default async function getUsername() {
         })
     let data = await response.json()
     const mainHeaderContainer = document.getElementById('main-Header-Container');
+    const siteBtns = document.getElementById('site-Btns');
+    
     const name = document.createElement('h3');
     name.id = 'name';
     name.innerHTML = `Inloggad som ${data[0].username}`;
-    mainHeaderContainer.appendChild(name);
+    siteBtns.appendChild(name);
     loggedInUser();
 }

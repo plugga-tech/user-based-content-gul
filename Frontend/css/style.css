@@ -12,9 +12,10 @@ body {
 
 #main-Head > #main-Header-Container {
     max-width: 1400px;
-    margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: auto;
     padding: 20px;
 }
 
@@ -86,7 +87,18 @@ button:hover {
     cursor: pointer;
 }
 
+#header-Logout-Btn {
+    width: 100px;
+    height: 26px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+}
 
+#header-Logout-Btn:hover {
+    scale: 110%;
+}
 
 
 

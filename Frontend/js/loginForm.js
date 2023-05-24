@@ -71,10 +71,12 @@ export default async function loginForm () {
             } else {
                 localStorage.setItem("user", data[0]._id)
                 const mainHeaderContainer = document.getElementById('main-Header-Container');
+                const siteBtns = document.getElementById('site-Btns');
+
                 const name = document.createElement('h3');
                 name.id = 'name';
-                name.innerHTML = data[0].username;
-                mainHeaderContainer.appendChild(name);
+                name.innerHTML = `Inloggad som ${data[0].username}`;
+                siteBtns.appendChild(name);
                 loggedInUser();
                 mainContainer.innerHTML = "";
                 loginBox.innerHTML = "";
