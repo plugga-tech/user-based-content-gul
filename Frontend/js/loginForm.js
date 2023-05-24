@@ -19,6 +19,8 @@ export default async function loginForm () {
     const loginBoxDiv = document.createElement('div');
     const loginText = document.createElement('h1');
 
+    loginBox.innerHTML = "";
+
     loginBoxDiv.id = "loginBox-Wrapper";
 
     loginBox.id = "login-Box";
@@ -109,7 +111,14 @@ export default async function loginForm () {
         createAccountBtn.id = "create-Account-Btn";
         createAccountBtn.innerText = "Skapa konto";
 
-        loginBox.append(createAccountText, createAccountUsername, createEmailInput, createPasswordInput, createAccountBtn);
+        const goBackBtn = document.createElement('button');
+        goBackBtn.id = 'go-Back-Btn'
+        goBackBtn.innerText = "Back";
+        goBackBtn.addEventListener('click', () => {
+            loginForm();
+        })
+
+        loginBox.append(createAccountText, createAccountUsername, createEmailInput, createPasswordInput, createAccountBtn, goBackBtn);
         loginBoxDiv.appendChild(loginBox);
 
         mainContainer.appendChild(loginBoxDiv);
