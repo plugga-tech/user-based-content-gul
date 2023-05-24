@@ -10,6 +10,7 @@ const loginBox = document.createElement('div');
 const createAccountUsername = document.createElement('input');
 const createEmailInput = document.createElement('input');
 const createPasswordInput = document.createElement('input');
+const message = document.createElement('h3');
 
 export default async function loginForm () {
 
@@ -18,6 +19,8 @@ export default async function loginForm () {
     const loginBtn = document.createElement('button');
     const loginBoxDiv = document.createElement('div');
     const loginText = document.createElement('h1');
+
+    loginBox.innerHTML = "";
 
     loginBoxDiv.id = "loginBox-Wrapper";
 
@@ -48,7 +51,7 @@ export default async function loginForm () {
     mainContainer.appendChild(loginBoxDiv);
 
     loginBtn.addEventListener('click', async () => {
-
+        message.innerText = "";
         if(!loginEmailInput.value || !loginPasswordInput.value){
             alert('Fyll i både email och lösenord');
         }else{
@@ -62,19 +65,21 @@ export default async function loginForm () {
             })
             let data = await response.json();
             if (!data[0] || !data[0]._id) {
-                const message = document.createElement('h3');
                 message.id = "message";
-                message.innerHTML = `${data.message}, försök igen!`
+                message.innerText = "";
+                message.innerText = `${data.message}, försök igen!`;
                 loginEmailInput.value = "";
                 loginPasswordInput.value = "";
                 loginBox.append(message);
             } else {
                 localStorage.setItem("user", data[0]._id)
                 const mainHeaderContainer = document.getElementById('main-Header-Container');
+                const siteBtns = document.getElementById('site-Btns');
+
                 const name = document.createElement('h3');
                 name.id = 'name';
-                name.innerHTML = data[0].username;
-                mainHeaderContainer.appendChild(name);
+                name.innerHTML = `Inloggad som ${data[0].username}`;
+                siteBtns.appendChild(name);
                 loggedInUser();
                 mainContainer.innerHTML = "";
                 loginBox.innerHTML = "";
@@ -107,7 +112,14 @@ export default async function loginForm () {
         createAccountBtn.id = "create-Account-Btn";
         createAccountBtn.innerText = "Skapa konto";
 
-        loginBox.append(createAccountText, createAccountUsername, createEmailInput, createPasswordInput, createAccountBtn);
+        const goBackBtn = document.createElement('button');
+        goBackBtn.id = 'go-Back-Btn'
+        goBackBtn.innerText = "Back";
+        goBackBtn.addEventListener('click', () => {
+            loginForm();
+        })
+
+        loginBox.append(createAccountText, createAccountUsername, createEmailInput, createPasswordInput, createAccountBtn, goBackBtn);
         loginBoxDiv.appendChild(loginBox);
 
         mainContainer.appendChild(loginBoxDiv);
@@ -131,7 +143,6 @@ export default async function loginForm () {
 
                 const userExist = await doesUserExist()
                 if (userExist === true) {
-                    const message = document.createElement('h2');
                     message.innerText = "Användarnamnet och/eller emailen finns redan!";
 
                     loginBox.appendChild(message);

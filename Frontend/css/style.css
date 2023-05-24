@@ -12,9 +12,10 @@ body {
 
 #main-Head > #main-Header-Container {
     max-width: 1400px;
-    margin: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin: auto;
     padding: 20px;
 }
 
@@ -49,7 +50,7 @@ h1{
     background-color: orange;
 }
 
-#content-div{
+#content-div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -60,20 +61,33 @@ h1{
 }
 
 
-#user-img{
+#user-img {
     max-width: 150px;
     border-radius: 10rem;
     margin: 0.3rem;
 }
 
-#user-cards{
+#user-cards {
     border: 1px solid black;
     text-align: center;
     box-shadow: 5px 5px 5px 1px rgb(107, 107, 107);
     background-color: #FFC794;
+    transition: 0.3s;
+    min-width: 200px;
+    min-height: 280px;
+    padding: 5px;
 }
 
-#postEl{
+#user-cards:hover {
+    scale: 105%;
+}
+
+#user-cards > h3 {
+    word-wrap: break-word;
+    max-width: 200px;
+}
+
+#postEl {
     border: 2px solid black;
     border-radius: 5px;
     padding: 0 5px 0 5px;
@@ -104,40 +118,24 @@ button:hover {
     justify-content: center;
 }
 
+#header-Logout-Btn, #create-Post-Btn, #my-Posts-Btn {
+    width: 100px;
+    height: 26px;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    margin-left: 10px;
+}
 
+#header-Logout-Btn:hover, #create-Post-Btn:hover, #my-Posts-Btn:hover {
+    scale: 110%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#name {
+    text-align: end;
+    margin-top: 0px;
+}
 
 #loginBox-Wrapper {
     display: flex;
@@ -175,7 +173,7 @@ button:hover {
     border-radius: 10px;
 }
 
-#login-Btn, #create-Account-Form-Btn, #create-Account-Btn {
+#login-Btn, #create-Account-Form-Btn, #create-Account-Btn, #go-Back-Btn {
     width: 150px;
     height: 30px;
     font-size: 16px;
@@ -190,3 +188,49 @@ button:hover {
     color: rgb(131, 0, 0);
 }
 
+#site-name:hover {
+    cursor: pointer;
+}
+
+#create-Post-Wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 760px;
+    padding: 10px;
+}
+
+#titel-Input {
+    width: 80%;
+    min-height: 50px;
+    font-size: 22px;
+    order: none;
+    border: none;
+    margin: 20px;
+    padding: 10px;
+}
+
+#content-Input {
+    width: 80%;
+    height: 400px;
+    resize: none;
+    font-size: 22px;
+    order: none;
+    border: none;
+    margin: 20px;
+    padding: 10px;
+
+}
+
+#creat-Btn {
+    width: 160px;
+    height: 50px;
+    background-color: mediumspringgreen;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 10px;    
+    margin: 20px;
+}

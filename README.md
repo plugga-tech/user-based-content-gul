@@ -24,10 +24,12 @@ Du behöver skapa en egen databas, antingen en lokaldatabas eller via t.ex. Mong
 
 1. `git clone https://github.com/plugga-tech/user-based-content-gul.git`
 2. Gå till repots mapp
-3. `code .` (Om du använder visual studie code, annars, kör koden med ditt favort program)
+3. `code .` (Om du använder visual studie code, annars, kör koden med ditt favorit program)
 4. Skapa en .env fil i backend mappen.
 5. Om du kör en databas via Mongo Atlas, lägg till denna raden i .env `DB_URL = "mongodb+srv://<ditt användarnamn>:<ditt lösenord>.ltcnbvw.mongodb.net/"`. Har du en lokal databas, läggar du in adressen till den.
 6. Installera npm packages genom `npm i`.
+7. Öppna webbsidan med live server om du har de installerat annars via htmlfilen.
+8. Har du en localstorage "user" sparad i din webbläsare så radera den.
 
 
 ### Följ oss!

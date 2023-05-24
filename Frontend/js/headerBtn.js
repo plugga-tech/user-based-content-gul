@@ -2,14 +2,16 @@
 
 import loginForm from './loginForm.js';
 const mainHeaderContainer = document.getElementById('main-Header-Container');
+const siteBtns = document.getElementById('site-Btns');
 
 export default async function headerBtn() {
+    siteBtns.innerHTML = "";
     const headerLoginBtn = document.createElement('button');
 
     headerLoginBtn.id = 'login-Btn';
     headerLoginBtn.innerText = "Logga in";
     
-    mainHeaderContainer.appendChild(headerLoginBtn);
+    siteBtns.appendChild(headerLoginBtn);
     
     headerLoginBtn.addEventListener('click', () => {
       headerLoginBtn.style.display = 'none';
