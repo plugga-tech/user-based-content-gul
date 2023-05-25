@@ -28,12 +28,13 @@ Navigera till mappen där du vill lägga repot.
 2. Navigera till repots mapp genom `cd user-based-content-gul`.
 3. Navigera till backendmappen genom `cd backend`.
 4. Installera npm packages genom `npm i`.
-5. Kör `code .` (Om du använder visual studie code, annars, kör koden med ditt favorit program)
-6. Skapa en .env fil i backend mappen.
-7. Om du kör en databas via Mongo Atlas, lägg till denna raden i .env `DB_URL = "mongodb+srv://<ditt användarnamn>:<ditt lösenord>.ltcnbvw.mongodb.net/"`. Har du en lokal databas, läggar du in adressen till den istället.
-8. I terminalen kör `nodemon start`.
-9. Öppna webbsidan med live server om du har de installerat annars via htmlfilen.
-10. Har du en localstorage "user" sparad i din webbläsare sedan tidigare så radera den.
+5. Kör `cd ..` för att navigera tillbaka till projekt mappen.
+6. Kör `code .` (Om du använder visual studie code, annars, kör koden med ditt favorit program)
+7. Skapa en .env fil i backend mappen.
+8. Om du kör en databas via Mongo Atlas, lägg till denna raden i .env `DB_URL = "mongodb+srv://<ditt användarnamn>:<ditt lösenord>.ltcnbvw.mongodb.net/"`. Har du en lokal databas, läggar du in adressen till den istället.
+9. I terminalen navigera till backendmappen genom `cd backend` och kör `nodemon start`.
+10. Öppna webbsidan med live server om du har de installerat annars via htmlfilen.
+11. Har du en localstorage "user" sparad i din webbläsare sedan tidigare så radera den.
 
 
 ### Följ oss!
