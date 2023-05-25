@@ -1,4 +1,5 @@
 'use strict'
+import getMyPosts from '../getMyPosts.js';
 import creatPost from './creatPost.js';
 
 export default function printPostForm() {
@@ -26,6 +27,7 @@ export default function printPostForm() {
         mainContainer.innerHTML = '';
         creatPost(titelInput.value, contentInput.value, author);
         console.log(author);
+        getMyPosts();
     })
 
 }
