@@ -156,9 +156,8 @@ button:hover {
 
 #header-Logout-Btn, #create-Post-Btn, #my-Posts-Btn {
     font-family: 'Poppins', sans-serif;
-    
     width: 100px;
-    height: 26px;
+    height: 35px;
     border-radius: 15px;
     outline: none;
     border: none;
@@ -348,23 +347,23 @@ button:hover {
 #button-Div {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    gap: 20px;
     font-family: 'Poppins', sans-serif;
-    width: 25%;
-    height: 26px;
-    margin-top: 50px;
     align-items: normal;
-    
-    
 }
 
 #edit-Btn, #delete-Btn {
     font-family: 'Poppins', sans-serif;
-    font-size: medium;
+    font-size: 16px;
     font-weight: bold;
     display:block;
     width: 120px;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.3s;
     height: 36px;
     margin-top: 15px;
 }
@@ -372,16 +371,13 @@ button:hover {
 #backBtn {
     font-family: 'Poppins', sans-serif;
     width: 100px;
-    height: 26px;
-
+    height: 35px;
     border-radius: 15px;
     outline: none;
     border: none;
     transition: 0.3s;
-
-    margin-left: 80px;
-    box-shadow: 7px 5px 5px rgb(65, 65, 65);
-    
+    /* margin-left: 80px; */
+    /* box-shadow: 7px 5px 5px rgb(65, 65, 65); */
 }
 
 #edit-Btn:hover, #delete-Btn:hover {
@@ -394,5 +390,10 @@ button:hover {
 
 #backBtn:hover {
     scale: 110%;
+}
 
+#postEl-Wrapper {
+    display: flex;
+    gap: 40px;
+    width: 80%;
 }

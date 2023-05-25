@@ -25,6 +25,8 @@ export default function getMyPosts() {
             posts.reverse();
             posts.forEach(post => {
                 if(post.author._id === localStorage.getItem('user')){
+                    const postElWrapper = document.createElement('div');
+                    postElWrapper.id = "postEl-Wrapper";
                     const postEl = document.createElement('div');
                     postEl.id = 'postEl';
                     const titleEl = document.createElement('h2');
@@ -44,7 +46,8 @@ export default function getMyPosts() {
                     buttonDiv.id= 'button-Div';
                     buttonDiv.append(editBtn, deleteBtn);
                     postEl.append(titleEl, contentEl, authorDateEl);
-                    container.append(postEl, buttonDiv);
+                    postElWrapper.append(postEl, buttonDiv);
+                    container.append(postElWrapper);
 
 
                     deleteBtn.addEventListener('click', () => {
