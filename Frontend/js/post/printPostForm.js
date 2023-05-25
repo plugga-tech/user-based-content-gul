@@ -25,9 +25,14 @@ export default function printPostForm() {
 
     creatBtn.addEventListener('click', () => {
         mainContainer.innerHTML = '';
-        creatPost(titelInput.value, contentInput.value, author);
-        console.log(author);
-        getMyPosts();
+        if(titelInput.value === "" || contentInput.value === ""){
+            alert('Fyll i titel och innehåll');
+            printPostForm();
+        }else{
+            creatPost(titelInput.value, contentInput.value, author);
+            console.log(author);
+            getMyPosts();
+        }
     })
 
 }

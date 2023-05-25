@@ -80,6 +80,7 @@ export default async function printUsers() {
               .then(posts => {
                 container.innerHTML = ''; // Clear the container
 
+                posts.reverse();
                 // Filter posts by matching author ID
                 const userPosts = posts.filter(post => post.author._id === userId);
 
@@ -117,10 +118,15 @@ export default async function printUsers() {
 
                     // Create elements for the selected post
                     const singlePost = document.createElement('div');
+                    singlePost.id = 'single-post';
                     const selectedTitleEl = document.createElement('h2');
+                    selectedTitleEl.id = 'selected-title';
                     const selectedContentEl = document.createElement('p');
+                    selectedContentEl.id = 'selected-content';
                     const selectedAuthorDateEl = document.createElement('p');
+                    selectedAuthorDateEl.id = 'selected-author'
                     const backButton = document.createElement('button');
+                    backButton.id = 'selected-btn'
 
                     selectedTitleEl.textContent = post.title;
                     selectedContentEl.textContent = post.content;
@@ -129,7 +135,7 @@ export default async function printUsers() {
                     container.append(singlePost);
 
                     // Style the back button
-                    backButton.textContent = '< Back';
+                    backButton.textContent = 'Tillbaka';
                     backButton.id = 'backBtn';
                     backButton.style.marginTop = '1rem';
 
@@ -144,7 +150,7 @@ export default async function printUsers() {
                 });
                 if (userPosts.length === 0) {
                   const noPostsEl = document.createElement('p');
-                  noPostsEl.textContent = 'No posts found for this user.';
+                  noPostsEl.textContent = 'Det finns inga inlägg på den här användaren.';
                   container.appendChild(noPostsEl);
                   mainContainer.append(container);
                 }

@@ -53,7 +53,7 @@ export default async function printPosts(){
           container.append(singlePost);
 
           // Style the back button
-          backButton.textContent = '< Back';
+          backButton.textContent = 'Tillbaka';
           backButton.id = 'backBtn';
           backButton.style.marginTop = '1rem';
 

@@ -323,6 +323,7 @@ button:hover {
     background-color: #FFFFFF;
 }
 
+
 #button-Div {
     display: flex;
     flex-direction: column;
@@ -345,10 +346,17 @@ button:hover {
     width: 120px;
     height: 36px;
     margin-top: 15px;
+
+#backBtn {
+    font-family: 'Poppins', sans-serif;
+    width: 100px;
+    height: 26px;
+
     border-radius: 15px;
     outline: none;
     border: none;
     transition: 0.3s;
+
     margin-left: 80px;
     box-shadow: 7px 5px 5px rgb(65, 65, 65);
     
@@ -361,4 +369,10 @@ button:hover {
 #delete-Btn {
     background: linear-gradient(0deg, rgba(213,223,237,1) 0%, rgba(253,45,88,1) 100%);
     
+
+}
+
+#backBtn:hover {
+    scale: 110%;
+
 }
