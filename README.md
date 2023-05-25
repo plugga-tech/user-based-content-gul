@@ -5,7 +5,7 @@ Vi har fått i uppdrag att skapa en användarbaserad plattform där en användar
 
 Vi valde att skapa en blogg där man kan skapa ett användarkonto, logga in, skapa, uppdatera och radera sina egna blogginlägg. Är man inte inloggad så kan man fortfarande se alla bloggare samt allas inlägg. 
 
-Projektmedlemmar: Therese Hagwall, Tony Hagwall, Felix Anneblad, Matias Bengtson, Jesper Flood & Sebastian Håkansson.
+Projektmedlemmar: Therese Hagwall, Tony Hagwall, Felix Anneblad, Matias Bengtsson, Jesper Flood & Sebastian Håkansson.
 
 ### Teknik
 
@@ -18,7 +18,7 @@ Projektmedlemmar: Therese Hagwall, Tony Hagwall, Felix Anneblad, Matias Bengtson
 
 ### Klona ner till din lokalamiljö 
 
-Du behöver skapa en egen databas, antingen en lokaldatabas eller via t.ex. Mongo Atlas.
+Du behöver skapa en egen databas, antingen en lokal databas eller via t.ex. Mongo Atlas.
 Sedan behöver du också ha node installerat på datorn. 
 
 Öppna din favorit terminal, t.ex. git bash. 
