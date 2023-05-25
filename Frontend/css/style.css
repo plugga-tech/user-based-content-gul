@@ -17,6 +17,7 @@ body {
 
 #main-Head:hover {
     background-color: rgba(0, 0, 0, 0.652);
+    color: #FFFFFF;
 }
 
 #main-Head > #main-Header-Container {
@@ -30,11 +31,11 @@ body {
 
 #site-name {
     font-family: 'Walter Turncoat', cursive;
-    color: white;
+    /* color: white; */
 }
 
 #name {
-    color: white;
+    /* color: white; */
     text-align: end;
     margin-top: 0px;
     font-weight: normal;
@@ -169,46 +170,6 @@ button:hover {
     scale: 110%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#name {
-    text-align: end;
-    margin-top: 0px;
-}
 
 #loginBox-Wrapper {
     display: flex;
