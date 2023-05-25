@@ -12,7 +12,7 @@ const createEmailInput = document.createElement('input');
 const createPasswordInput = document.createElement('input');
 const message = document.createElement('h3');
 
-export default async function loginForm () {
+export default async function loginForm() {
 
     const loginEmailInput = document.createElement('input');
     const loginPasswordInput = document.createElement('input');
@@ -50,18 +50,18 @@ export default async function loginForm () {
 
     mainContainer.appendChild(loginBoxDiv);
 
-    loginBtn.addEventListener('click', async () => {
+    async function handleLogin() {
         message.innerText = "";
-        if(!loginEmailInput.value || !loginPasswordInput.value){
+        if (!loginEmailInput.value || !loginPasswordInput.value) {
             alert('Fyll i både email och lösenord');
-        }else{
+        } else {
 
             let response = await fetch('http://localhost:3000/api/users/login', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ email: loginEmailInput.value, password: loginPasswordInput.value })
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email: loginEmailInput.value, password: loginPasswordInput.value })
             })
             let data = await response.json();
             if (!data[0] || !data[0]._id) {
@@ -73,7 +73,6 @@ export default async function loginForm () {
                 loginBox.append(message);
             } else {
                 localStorage.setItem("user", data[0]._id)
-                const mainHeaderContainer = document.getElementById('main-Header-Container');
                 const siteBtns = document.getElementById('site-Btns');
 
                 const name = document.createElement('h3');
@@ -85,6 +84,14 @@ export default async function loginForm () {
                 loginBox.innerHTML = "";
             };
         };
+    };
+
+    loginBtn.addEventListener('click', handleLogin);
+
+    loginPasswordInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            handleLogin();
+        }
     });
 
 
@@ -127,7 +134,7 @@ export default async function loginForm () {
 
 
 
-        createAccountBtn.addEventListener('click', async() => {
+        createAccountBtn.addEventListener('click', async () => {
 
             if (!createAccountUsername.value || !createEmailInput.value || !createPasswordInput.value) {
 
@@ -147,15 +154,15 @@ export default async function loginForm () {
 
                     loginBox.appendChild(message);
 
-                }else{
+                } else {
                     createAccount(createAccountUsername.value, createEmailInput.value, createPasswordInput.value);
-                loginBox.innerHTML = "";
+                    loginBox.innerHTML = "";
 
-                const accountCreatedText = document.createElement('h1');
-                accountCreatedText.innerText = "Ditt konto har skapats!";
-                loginBox.appendChild(accountCreatedText);
+                    const accountCreatedText = document.createElement('h1');
+                    accountCreatedText.innerText = "Ditt konto har skapats!";
+                    loginBox.appendChild(accountCreatedText);
 
-                loginForm();
+                    loginForm();
                 }
 
             }
