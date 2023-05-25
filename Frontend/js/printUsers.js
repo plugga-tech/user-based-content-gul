@@ -117,10 +117,15 @@ export default async function printUsers() {
 
                     // Create elements for the selected post
                     const singlePost = document.createElement('div');
+                    singlePost.id = 'single-post';
                     const selectedTitleEl = document.createElement('h2');
+                    selectedTitleEl.id = 'selected-title';
                     const selectedContentEl = document.createElement('p');
+                    selectedContentEl.id = 'selected-content';
                     const selectedAuthorDateEl = document.createElement('p');
+                    selectedAuthorDateEl.id = 'selected-author'
                     const backButton = document.createElement('button');
+                    backButton.id = 'selected-btn'
 
                     selectedTitleEl.textContent = post.title;
                     selectedContentEl.textContent = post.content;
