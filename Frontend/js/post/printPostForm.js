@@ -30,8 +30,6 @@ export default function printPostForm() {
             printPostForm();
         }else{
             creatPost(titelInput.value, contentInput.value, author);
-            console.log(author);
-            getMyPosts();
         }
     })
 

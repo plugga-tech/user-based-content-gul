@@ -1,3 +1,5 @@
+import getMyPosts from "../getMyPosts.js";
+
 export default async function createPost(title, content, author ) {
     let response = await fetch('http://localhost:3000/api/posts/add', {
         method: "POST",
@@ -6,7 +8,5 @@ export default async function createPost(title, content, author ) {
         },
         body: JSON.stringify({ title: title, content: content, userId: author })
     })
-
-    let data = await response.json();
-    console.log(data);
+    getMyPosts();
 }
