@@ -2,12 +2,21 @@
 
 
 body {
+    background-image: url("https://images.unsplash.com/photo-1499988921418-b7df40ff03f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center center; */
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
 
 #main-Head {
-    background-color: #FFC794;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+#main-Head:hover {
+    background-color: rgba(0, 0, 0, 0.652);
 }
 
 #main-Head > #main-Header-Container {
@@ -21,6 +30,14 @@ body {
 
 #site-name {
     font-family: 'Walter Turncoat', cursive;
+    color: white;
+}
+
+#name {
+    color: white;
+    text-align: end;
+    margin-top: 0px;
+    font-weight: normal;
 }
 
 #loginBtn{
@@ -34,7 +51,7 @@ h1{
 }
 
 #main-Container {
-    background-color:#FFF7B0;
+    /* background-color: rgba(0, 0, 0, 0.29); */
     max-width: 1400px;
     display: flex;
     flex-direction: column;
@@ -48,6 +65,9 @@ h1{
     gap: 10px;
     justify-content: center;
     background-color: orange;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
 }
 
 #content-div {
@@ -58,6 +78,10 @@ h1{
     gap: 50px;
     /* border: 2px solid black; */
     padding: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.29);
 }
 
 
@@ -68,9 +92,10 @@ h1{
 }
 
 #user-cards {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: center;
-    box-shadow: 5px 5px 5px 1px rgb(107, 107, 107);
+    /* box-shadow: 5px 5px 5px 1px rgb(107, 107, 107); */
+    border-radius: 10px;
     background-color: #FFC794;
     transition: 0.3s;
     min-width: 200px;
@@ -101,6 +126,7 @@ button:hover {
 }
 
 #header-Logout-Btn, #create-Post-Btn, #my-Posts-Btn {
+    font-family: 'Poppins', sans-serif;
     width: 100px;
     height: 26px;
     border-radius: 15px;
@@ -112,11 +138,6 @@ button:hover {
 
 #header-Logout-Btn:hover, #create-Post-Btn:hover, #my-Posts-Btn:hover {
     scale: 110%;
-}
-
-#name {
-    text-align: end;
-    margin-top: 0px;
 }
 
 
