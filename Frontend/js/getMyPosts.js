@@ -22,7 +22,7 @@ export default function getMyPosts() {
             container.appendChild(noPostsEl);
             mainContainer.append(container);
             container.innerText = '';
-
+            posts.reverse();
             posts.forEach(post => {
                 if(post.author._id === localStorage.getItem('user')){
                     const postEl = document.createElement('div');
