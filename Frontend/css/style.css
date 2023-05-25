@@ -125,6 +125,24 @@ button:hover {
     cursor: pointer;
 }
 
+#site-name:hover {
+    cursor: pointer;
+}
+
+#single-post{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+#backBtn{
+    max-width: 100px;
+}
+#selected-title{
+    display: flex;
+    justify-content: center;
+}
+
 #header-Logout-Btn, #create-Post-Btn, #my-Posts-Btn {
     font-family: 'Poppins', sans-serif;
     width: 100px;
@@ -175,6 +193,11 @@ button:hover {
 
 
 
+
+#name {
+    text-align: end;
+    margin-top: 0px;
+}
 
 #loginBox-Wrapper {
     display: flex;
