@@ -80,6 +80,7 @@ export default async function printUsers() {
               .then(posts => {
                 container.innerHTML = ''; // Clear the container
 
+                posts.reverse();
                 // Filter posts by matching author ID
                 const userPosts = posts.filter(post => post.author._id === userId);
 
@@ -134,7 +135,7 @@ export default async function printUsers() {
                     container.append(singlePost);
 
                     // Style the back button
-                    backButton.textContent = '< Back';
+                    backButton.textContent = 'Tillbaka';
                     backButton.id = 'backBtn';
                     backButton.style.marginTop = '1rem';
 
