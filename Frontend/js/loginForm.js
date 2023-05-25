@@ -10,6 +10,7 @@ const loginBox = document.createElement('div');
 const createAccountUsername = document.createElement('input');
 const createEmailInput = document.createElement('input');
 const createPasswordInput = document.createElement('input');
+const message = document.createElement('h3');
 
 export default async function loginForm () {
 
@@ -50,7 +51,7 @@ export default async function loginForm () {
     mainContainer.appendChild(loginBoxDiv);
 
     loginBtn.addEventListener('click', async () => {
-
+        message.innerText = "";
         if(!loginEmailInput.value || !loginPasswordInput.value){
             alert('Fyll i både email och lösenord');
         }else{
@@ -64,9 +65,9 @@ export default async function loginForm () {
             })
             let data = await response.json();
             if (!data[0] || !data[0]._id) {
-                const message = document.createElement('h3');
                 message.id = "message";
-                message.innerHTML = `${data.message}, försök igen!`
+                message.innerText = "";
+                message.innerText = `${data.message}, försök igen!`;
                 loginEmailInput.value = "";
                 loginPasswordInput.value = "";
                 loginBox.append(message);
@@ -142,7 +143,6 @@ export default async function loginForm () {
 
                 const userExist = await doesUserExist()
                 if (userExist === true) {
-                    const message = document.createElement('h2');
                     message.innerText = "Användarnamnet och/eller emailen finns redan!";
 
                     loginBox.appendChild(message);
