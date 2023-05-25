@@ -21,9 +21,10 @@ export default function getMyPosts() {
             noPostsEl.textContent = 'Du har inga inlägg än';
             container.appendChild(noPostsEl);
             mainContainer.append(container);
+            container.innerText = '';
+            posts.reverse();
             posts.forEach(post => {
                 if(post.author._id === localStorage.getItem('user')){
-                    container.innerHTML = '';
                     const postEl = document.createElement('div');
                     postEl.id = 'postEl';
                     const titleEl = document.createElement('h2');
@@ -35,10 +36,16 @@ export default function getMyPosts() {
                     contentEl.textContent = firstTwoSentences;
                     const deleteBtn = document.createElement('button');
                     const editBtn = document.createElement('button');
+                    const buttonDiv = document.createElement('div');
                     deleteBtn.innerText = 'Ta bort';
                     editBtn.innerText = 'Redigera';
+                    deleteBtn.id = 'delete-Btn';
+                    editBtn.id = 'edit-Btn';
+                    buttonDiv.id= 'button-Div';
+                    buttonDiv.append(editBtn, deleteBtn);
                     postEl.append(titleEl, contentEl, authorDateEl);
-                    container.append(postEl, deleteBtn, editBtn);
+                    container.append(postEl, buttonDiv);
+
 
                     deleteBtn.addEventListener('click', () => {
                         deletePost(post._id);

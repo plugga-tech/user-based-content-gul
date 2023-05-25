@@ -1,4 +1,5 @@
 'use strict'
+import getMyPosts from '../getMyPosts.js';
 import creatPost from './creatPost.js';
 
 export default function printPostForm() {
@@ -24,8 +25,14 @@ export default function printPostForm() {
 
     creatBtn.addEventListener('click', () => {
         mainContainer.innerHTML = '';
-        creatPost(titelInput.value, contentInput.value, author);
-        console.log(author);
+        if(titelInput.value === "" || contentInput.value === ""){
+            alert('Fyll i titel och innehåll');
+            printPostForm();
+        }else{
+            creatPost(titelInput.value, contentInput.value, author);
+            console.log(author);
+            getMyPosts();
+        }
     })
 
 }
