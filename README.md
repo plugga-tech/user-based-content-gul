@@ -19,10 +19,9 @@ Projektmedlemmar: Therese Hagwall, Tony Hagwall, Felix Anneblad, Matias Bengtsso
 ### Klona ner till din lokalamiljö 
 
 Du behöver skapa en egen databas, antingen en lokal databas eller via t.ex. Mongo Atlas.
-Sedan behöver du också ha node installerat på datorn. 
+Sedan behöver du också ha node installerat på datorn. Har du inte detta så kan du ladda ner node här `https://nodejs.org/en/download`. Och sedan följa anvisningarna.
 
-Öppna din favorit terminal, t.ex. git bash. 
-Har du inte node installerat, så skriver du `npm i node` i terminalen. 
+Öppna din favorit terminal, t.ex. git bash.  
 Navigera till mappen där du vill lägga repot. 
 
 1. Kör `git clone https://github.com/plugga-tech/user-based-content-gul.git`
