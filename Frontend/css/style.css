@@ -364,6 +364,8 @@ button:hover {
     outline: none;
     border-radius: 10px;
     transition: 0.3s;
+    height: 36px;
+    margin-top: 15px;
 }
 
 #backBtn {
