@@ -114,12 +114,18 @@ h1{
 }
 
 #postEl {
-    border: 2px solid black;
-    border-radius: 5px;
+    /* border: 2px solid black; */
+    background-color: #EECEB5;
+    border-radius: 10px;
     padding: 0 5px 0 5px;
     width: 60rem;
     text-align: center;
-    box-shadow: 5px 5px 5px 1px rgb(144, 143, 143);
+    /* box-shadow: 5px 5px 5px 1px rgb(144, 143, 143); */
+    transition: 0.3s;
+}
+
+#postEl:hover {
+    scale: 105%;
 }
 
 button:hover {
@@ -133,6 +139,9 @@ button:hover {
 #single-post{
     display: flex;
     flex-direction: column;
+    background-color: #EECEB5;
+    border-radius: 10px;
+    padding: 10px 100px;
     width: 80%;
 }
 
@@ -216,9 +225,15 @@ button:hover {
     min-width: 300px;
     min-height: 400px;
     gap: 20px;
-    border: solid black;
-    border-radius: 5px;
+    /* border: solid black; */
+    background-color: rgba(0, 0, 0, 0.29);
+    border-radius: 10px;
     padding: 20px;
+    transition: 0.3s;
+}
+
+#login-Box:hover {
+    scale: 105%;
 }
 
 #login-Text, #create-Account-Text {
@@ -235,6 +250,7 @@ button:hover {
     border: none;
     outline: none;
     border-radius: 10px;
+    background-color: #FFFFFF;
 }
 
 #login-Btn, #create-Account-Form-Btn, #create-Account-Btn, #go-Back-Btn {
@@ -245,6 +261,7 @@ button:hover {
     border: none;
     outline: none;
     border-radius: 10px;
+    background-color: #FFFFFF;
 }
 
 #account-Not-Created, #message {
@@ -263,6 +280,8 @@ button:hover {
     justify-content: center;
     min-height: 760px;
     padding: 10px;
+    background-color: rgba(0, 0, 0, 0.29);
+    border-radius: 10px;
 }
 
 #titel-Input {
@@ -273,6 +292,8 @@ button:hover {
     border: none;
     margin: 20px;
     padding: 10px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
 }
 
 #content-Input {
@@ -284,10 +305,11 @@ button:hover {
     border: none;
     margin: 20px;
     padding: 10px;
-
+    border-radius: 10px;
+    background-color: #FFFFFF;
 }
 
-#creat-Btn {
+#creat-Btn, #saveButton {
     width: 160px;
     height: 50px;
     background-color: mediumspringgreen;
@@ -297,4 +319,45 @@ button:hover {
     outline: none;
     border-radius: 10px;    
     margin: 20px;
+    transition: 0.3s;
+}
+
+#creat-Btn:hover, #saveButton:hover {
+    scale: 105%;
+}
+
+#editForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    max-width: 1400px;
+    min-height: 760px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.29);
+}
+
+#editTitleInput {
+    width: 80%;
+    min-height: 50px;
+    font-size: 22px;
+    order: none;
+    border: none;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+#editContentInput {
+    width: 80%;
+    height: 400px;
+    resize: none;
+    font-size: 22px;
+    order: none;
+    border: none;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
 }
