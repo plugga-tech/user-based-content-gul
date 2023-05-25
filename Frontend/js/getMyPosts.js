@@ -36,10 +36,15 @@ export default function getMyPosts() {
                     contentEl.textContent = firstTwoSentences;
                     const deleteBtn = document.createElement('button');
                     const editBtn = document.createElement('button');
+                    const buttonDiv = document.createElement('div');
                     deleteBtn.innerText = 'Ta bort';
                     editBtn.innerText = 'Redigera';
+                    deleteBtn.id = 'delete-Btn';
+                    editBtn.id = 'edit-Btn';
+                    buttonDiv.id= 'button-Div';
+                    buttonDiv.append(editBtn, deleteBtn);
                     postEl.append(titleEl, contentEl, authorDateEl);
-                    container.append(postEl, deleteBtn, editBtn);
+                    container.append(postEl, buttonDiv);
 
 
                     deleteBtn.addEventListener('click', () => {
