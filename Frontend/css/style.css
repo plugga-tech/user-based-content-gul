@@ -367,6 +367,7 @@ button:hover {
     width: 120px;
     height: 36px;
     margin-top: 15px;
+}
 
 #backBtn {
     font-family: 'Poppins', sans-serif;
@@ -389,8 +390,6 @@ button:hover {
 
 #delete-Btn {
     background: linear-gradient(0deg, rgba(213,223,237,1) 0%, rgba(253,45,88,1) 100%);
-    
-
 }
 
 #backBtn:hover {
