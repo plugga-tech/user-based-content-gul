@@ -16,7 +16,7 @@ export default async function printPosts(){
         const contentEl = document.createElement('p');
         const firstTwoSentences = post.content.split('.').slice(0, 2).join('.') + '.';
         const authorDateEl = document.createElement('p');
-        authorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
+        authorDateEl.textContent = `Bloggare: ${post.author.username}, Skapad: ${post.created}`;
         titleEl.textContent = post.title;
         contentEl.textContent = firstTwoSentences;
         postEl.append(titleEl, contentEl, authorDateEl);
@@ -39,7 +39,7 @@ export default async function printPosts(){
           singlePost.id = 'single-post';
           const selectedTitleEl = document.createElement('h2');
           selectedTitleEl.id = 'selected-title';
-          const selectedContentEl = document.createElement('p');
+          const selectedContentEl = document.createElement('article');
           selectedContentEl.id = 'selected-content';
           const selectedAuthorDateEl = document.createElement('p');
           selectedAuthorDateEl.id = 'selected-author'
@@ -48,7 +48,7 @@ export default async function printPosts(){
 
           selectedTitleEl.textContent = post.title;
           selectedContentEl.textContent = post.content;
-          selectedAuthorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
+          selectedAuthorDateEl.textContent = `Bloggare: ${post.author.username}, Skapad: ${post.created}`;
           singlePost.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton)
           container.append(singlePost);
 

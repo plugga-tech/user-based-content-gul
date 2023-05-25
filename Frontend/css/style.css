@@ -402,3 +402,7 @@ button:hover {
     gap: 40px;
     width: 80%;
 }
+
+#selected-content{
+    display: flex;
+}

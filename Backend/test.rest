@@ -61,6 +61,16 @@ Content-Type: application/json
 
 ###
 
+// HÄMTA SPECIFIK POST med authorId
+POST http://localhost:3000/api/posts/646f6f3f96a6a34e7628f9e2
+Content-Type: application/json
+
+{
+"_id": "646f6f3f96a6a34e7628f9e2"
+}
+
+###
+
 //DELETE POST
 DELETE http://localhost:3000/api/posts/delete
 Content-Type: application/json
@@ -79,3 +89,4 @@ Content-Type: application/json
   "content": "FUUUUUUNGERA!!!!"
   
 }
+

@@ -47,6 +47,19 @@ router.post("/", (req, res) => {
       });
 })
 
+//Hämta specifik post med author Id
+router.post("/:id", (req, res) => {
+  let findPost = { author: req.params.id};
+  postModel.find(findPost)
+      .then(post => {
+          res.json(post)
+      })
+      .catch(error => {
+          console.error(error);
+          // Hantera fel
+      });
+})
+
 
 //Delete post
 router.delete('/delete', async (req, res) => {

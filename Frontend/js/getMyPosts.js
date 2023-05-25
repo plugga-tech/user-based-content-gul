@@ -14,17 +14,25 @@ export default function getMyPosts() {
     mainContainer.append(titleHeader);
     titleHeader.append(myPostsText);
     mainContainer.appendChild(container);
-    fetch('http://localhost:3000/api/posts')
+    const authorId = localStorage.getItem('user');
+    fetch(`http://localhost:3000/api/posts/${authorId}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({authorId})
+    })
         .then(response => response.json())
         .then(posts => {
-            const noPostsEl = document.createElement('p');
-            noPostsEl.textContent = 'Du har inga inlägg än';
-            container.appendChild(noPostsEl);
-            mainContainer.append(container);
-            container.innerText = '';
-            posts.reverse();
-            posts.forEach(post => {
-                if(post.author._id === localStorage.getItem('user')){
+            if(posts.length === 0){
+                container.innerText = '';
+                const noPostsEl = document.createElement('p');
+                noPostsEl.textContent = 'Du har inga inlägg än';
+                container.appendChild(noPostsEl);
+                mainContainer.append(container);
+            }else{
+                posts.reverse();
+                posts.forEach(post => {
                     const postElWrapper = document.createElement('div');
                     postElWrapper.id = "postEl-Wrapper";
                     const postEl = document.createElement('div');
@@ -33,7 +41,7 @@ export default function getMyPosts() {
                     const contentEl = document.createElement('p');
                     const firstTwoSentences = post.content.split('.').slice(0, 2).join('.') + '.';
                     const authorDateEl = document.createElement('p');
-                    authorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
+                    authorDateEl.textContent = `Skapad: ${post.created}`;
                     titleEl.textContent = post.title;
                     contentEl.textContent = firstTwoSentences;
                     const deleteBtn = document.createElement('button');
@@ -57,8 +65,9 @@ export default function getMyPosts() {
                     editBtn.addEventListener('click', () => {
                         editPost(post._id);
                     });
-                };
-            });
+                    
+                });
+            }
         });
         
 };

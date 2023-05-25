@@ -8,7 +8,4 @@ export default async function createAccount(username, email, password) {
         },
         body: JSON.stringify({ username: username, email: email, password: password })
     })
-
-    let data = await response.json();
-    console.log(data);
 }

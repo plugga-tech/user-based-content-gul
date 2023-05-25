@@ -93,7 +93,7 @@ export default async function printUsers() {
                   const contentEl = document.createElement('p');
                   const firstTwoSentences = post.content.split('.').slice(0, 2).join('.') + '.';
                   const authorDateEl = document.createElement('p');
-                  authorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
+                  authorDateEl.textContent = `Bloggare: ${post.author.username}, Skapad: ${post.created}`;
                   titleEl.textContent = post.title;
                   contentEl.textContent = firstTwoSentences;
                   postEl.append(titleEl, contentEl, authorDateEl);
@@ -110,8 +110,6 @@ export default async function printUsers() {
 
                   // Add click event listener to each title element
                   postEl.addEventListener('click', () => {
-                    // Hide all posts
-                    //container.style.display = 'none';
 
                     // Clear the container
                     container.innerHTML = '';
@@ -130,7 +128,7 @@ export default async function printUsers() {
 
                     selectedTitleEl.textContent = post.title;
                     selectedContentEl.textContent = post.content;
-                    selectedAuthorDateEl.textContent = `Author: ${post.author.username}, Date: ${post.created}`;
+                    selectedAuthorDateEl.textContent = `Bloggare: ${post.author.username}, Skapad: ${post.created}`;
                     singlePost.append(selectedTitleEl, selectedContentEl, selectedAuthorDateEl, backButton)
                     container.append(singlePost);
 
