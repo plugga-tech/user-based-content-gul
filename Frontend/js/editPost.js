@@ -14,6 +14,7 @@ export default async function editPost(postId) {
     const editContentInput = document.createElement('textarea');
     editContentInput.id = 'editContentInput';
     const saveButton = document.createElement('button');
+    saveButton.id = "saveButton";
     saveButton.type = 'submit';
     saveButton.textContent = 'Spara';
 
@@ -33,9 +34,6 @@ export default async function editPost(postId) {
     // Fyll i formuläret med befintliga värden
     editTitleInput.value = data[0].title;
     editContentInput.value = data[0].content;
-
-    // Visa formuläret för redigering av inlägg
-    editForm.style.display = 'block';
 
     // Händelsehanterare för när formuläret skickas
     editForm.addEventListener('submit', async (e) => {
