@@ -19,17 +19,22 @@ Projektmedlemmar: Therese Hagwall, Tony Hagwall, Felix Anneblad, Matias Bengtson
 ### Klona ner till din lokalamiljö 
 
 Du behöver skapa en egen databas, antingen en lokaldatabas eller via t.ex. Mongo Atlas.
+Sedan behöver du också ha node installerat på datorn. 
 
-Öppna din favorit terminal, t.ex. git bash. Navigera till mappen där du vill lägga repot. 
+Öppna din favorit terminal, t.ex. git bash. 
+Har du inte node installerat, så skriver du `npm i node` i terminalen. 
+Navigera till mappen där du vill lägga repot. 
 
-1. `git clone https://github.com/plugga-tech/user-based-content-gul.git`
-2. Gå till repots mapp
-3. `code .` (Om du använder visual studie code, annars, kör koden med ditt favorit program)
-4. Skapa en .env fil i backend mappen.
-5. Om du kör en databas via Mongo Atlas, lägg till denna raden i .env `DB_URL = "mongodb+srv://<ditt användarnamn>:<ditt lösenord>.ltcnbvw.mongodb.net/"`. Har du en lokal databas, läggar du in adressen till den.
-6. Installera npm packages genom `npm i`.
-7. Öppna webbsidan med live server om du har de installerat annars via htmlfilen.
-8. Har du en localstorage "user" sparad i din webbläsare så radera den.
+1. Kör `git clone https://github.com/plugga-tech/user-based-content-gul.git`
+2. Navigera till repots mapp genom `cd user-based-content-gul`.
+3. Navigera till backendmappen genom `cd backend`.
+4. Installera npm packages genom `npm i`.
+5. Kör `code .` (Om du använder visual studie code, annars, kör koden med ditt favorit program)
+6. Skapa en .env fil i backend mappen.
+7. Om du kör en databas via Mongo Atlas, lägg till denna raden i .env `DB_URL = "mongodb+srv://<ditt användarnamn>:<ditt lösenord>.ltcnbvw.mongodb.net/"`. Har du en lokal databas, läggar du in adressen till den istället.
+8. I terminalen kör `nodemon start`.
+9. Öppna webbsidan med live server om du har de installerat annars via htmlfilen.
+10. Har du en localstorage "user" sparad i din webbläsare sedan tidigare så radera den.
 
 
 ### Följ oss!
@@ -37,6 +42,6 @@ Du behöver skapa en egen databas, antingen en lokaldatabas eller via t.ex. Mong
 -   Therese Hagwalls [Github Profil](https://github.com/ThereseHagwall)
 -   Jesper Floods [Github Profil](https://github.com/Bambyyyy)
 -   Tony Hagwalls [Github Profil](https://github.com/Hagwall86)
--   Matias Bengtsons [Github Profil](https://github.com/Mrmbengan)
+-   Matias Bengtssons [Github Profil](https://github.com/Mrmbengan)
 -   Felix Anneblads [Github Profil](https://github.com/AnnebladFelix)
 -   Sebastian Håkanssons [Github Profil](https://github.com/sebbehakansson)
