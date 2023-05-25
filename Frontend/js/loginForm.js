@@ -114,7 +114,7 @@ export default async function loginForm () {
 
         const goBackBtn = document.createElement('button');
         goBackBtn.id = 'go-Back-Btn'
-        goBackBtn.innerText = "Tillbaks";
+        goBackBtn.innerText = "Tillbaka";
         goBackBtn.addEventListener('click', () => {
             loginForm();
         })

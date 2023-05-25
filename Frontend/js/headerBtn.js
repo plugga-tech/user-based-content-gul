@@ -8,7 +8,7 @@ export default async function headerBtn() {
     siteBtns.innerHTML = "";
     const headerLoginBtn = document.createElement('button');
 
-    headerLoginBtn.id = 'login-Btn';
+    headerLoginBtn.id = 'header-Login-Btn';
     headerLoginBtn.innerText = "Logga in";
     
     siteBtns.appendChild(headerLoginBtn);
