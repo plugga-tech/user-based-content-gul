@@ -64,10 +64,10 @@ h1{
     flex-direction: row;
     gap: 10px;
     justify-content: center;
-    background-color: orange;
+    background-color: #E0B595;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-
+    /*  #dbbc9f*/
 }
 
 #content-div {
@@ -96,7 +96,8 @@ h1{
     text-align: center;
     /* box-shadow: 5px 5px 5px 1px rgb(107, 107, 107); */
     border-radius: 10px;
-    background-color: #FFC794;
+    /* #e1cdba */
+    background-color: #EECEB5;
     transition: 0.3s;
     min-width: 200px;
     min-height: 280px;
@@ -127,6 +128,7 @@ button:hover {
 
 #header-Logout-Btn, #create-Post-Btn, #my-Posts-Btn {
     font-family: 'Poppins', sans-serif;
+    
     width: 100px;
     height: 26px;
     border-radius: 15px;
