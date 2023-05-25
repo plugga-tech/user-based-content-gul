@@ -33,7 +33,7 @@ Navigera till mappen där du vill lägga repot.
 6. Kör `code .` (Om du använder visual studie code, annars, kör koden med ditt favorit program)
 7. Skapa en .env fil i backend mappen.
 8. Om du kör en databas via Mongo Atlas, lägg till denna raden i .env `DB_URL = "mongodb+srv://<ditt användarnamn>:<ditt lösenord>.ltcnbvw.mongodb.net/"`. Har du en lokal databas, läggar du in adressen till den istället.
-9. I terminalen kör `nodemon start`.
+9. I terminalen navigera till backendmappen genom `cd backend` och kör `nodemon start`.
 10. Öppna webbsidan med live server om du har de installerat annars via htmlfilen.
 11. Har du en localstorage "user" sparad i din webbläsare sedan tidigare så radera den.
 
