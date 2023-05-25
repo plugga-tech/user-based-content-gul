@@ -150,7 +150,7 @@ export default async function printUsers() {
                 });
                 if (userPosts.length === 0) {
                   const noPostsEl = document.createElement('p');
-                  noPostsEl.textContent = 'No posts found for this user.';
+                  noPostsEl.textContent = 'Det finns inga inlägg på den här användaren.';
                   container.appendChild(noPostsEl);
                   mainContainer.append(container);
                 }
