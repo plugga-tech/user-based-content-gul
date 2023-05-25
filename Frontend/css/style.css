@@ -58,6 +58,7 @@ h1{
     flex-direction: column;
     margin: auto;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 #main-Container > header {
@@ -174,7 +175,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 800px;
+    min-height: 700px;
 }
 
 #login-Box {
@@ -379,12 +380,17 @@ button:hover {
     /* box-shadow: 7px 5px 5px rgb(65, 65, 65); */
 }
 
-#edit-Btn:hover, #delete-Btn:hover {
+#edit-Btn:hover {
     scale: 110%;
 }
 
 #delete-Btn {
-    background: linear-gradient(0deg, rgba(213,223,237,1) 0%, rgba(253,45,88,1) 100%);
+    background-color: rgba(255, 101, 101, 0.587);
+}
+
+#delete-Btn:hover {
+    scale: 110%;
+    background-color: rgb(255, 101, 101);
 }
 
 #backBtn:hover {
